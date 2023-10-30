@@ -10,7 +10,7 @@
 
   boot.initrd.availableKernelModules =
     [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ "8188eus" ];
+  #boot.initrd.kernelModules = [ "8188eus" ];
   boot.kernelModules = [ "kvm-amd" ];
   #boot.extraModulePackages = [ config.boot.kernelPackages.rtl8188eus-aircrack ];
   fileSystems."/" = {
