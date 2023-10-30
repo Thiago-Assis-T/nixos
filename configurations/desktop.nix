@@ -11,6 +11,7 @@
     ./modules/locale.nix
     ./modules/boot.nix
     ./modules/ssh.nix
+    ./modules/tor.nix
   ];
 
   system = {
