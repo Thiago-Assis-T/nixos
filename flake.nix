@@ -10,14 +10,16 @@
     };
   };
 
-  outputs =
-    inputs@{ self, home-manager, nixpkgs, hyprland, ... }:
+  outputs = inputs@{ self, home-manager, nixpkgs, hyprland, ... }:
     let
       system = "x86_64-linux";
 
       pkgs = import nixpkgs {
         inherit system;
-        config = { allowUnfree = true; };
+        config = {
+          allowUnfree = true;
+          allowBroken = true;
+        };
       };
     in {
 
