@@ -43,7 +43,7 @@
         add-peer=ozeavjybjbxbvmfcpxzjcn4zklbgohjwwndzenjt44pypvx6jisy74id.onion:18083
         add-peer=xcccrsxi2zknef6zl3sviasqg4xnlkh5k3xqu7ytwkpfli3huyfvsjid.onion:18083
         disable-rpc-ban=1
-        tx-proxy "tx-proxy=tor,127.0.0.1:9050,16"
+        tx-proxy="tx-proxy=tor,127.0.0.1:9050,16"
 
       '';
     };
