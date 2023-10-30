@@ -6,13 +6,13 @@
 {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-  #boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   boot.initrd.availableKernelModules =
     [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ "8188eus" ];
   boot.kernelModules = [ "kvm-amd" ];
-  boot.extraModulePackages = [ config.boot.kernelPackages.rtl8188eus-aircrack ];
+  #boot.extraModulePackages = [ config.boot.kernelPackages.rtl8188eus-aircrack ];
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/63e8dbc8-6720-40b8-8ee4-7ce1e5f3380d";
     fsType = "ext4";
