@@ -21,6 +21,8 @@
         port = 18081;
         restricted = true;
       };
+      limits.upload = 1048576;
+      limits.download = 1048576;
       extraConfig = ''
         enforce-dns-checkpointing=1
         public-node=1
@@ -32,8 +34,6 @@
         no-zmq=1
         rpc-ssl=autodetect
         db-sync-mode=safe
-        limit-rate-up=1048576
-        limit-rate-down=1048576
         tx-proxy=tor,127.0.0.1:9050,16
         add-peer=4egylyolrzsk6rskorqvocipdo4tqqoyzxnplbjorns7issmgpoxvtyd.onion:18083
         add-peer=fagmobguo6u4z4b2ghyg3jegcdpmd4qj4wxkhemph5d5q6dltllveqyd.onion:18083
