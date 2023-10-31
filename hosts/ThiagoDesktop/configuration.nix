@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./hardware-coniguration.nix
+    ./hardware-configuration.nix
     ../../modules/monero.nix
     ../../modules/networking.nix
     ../../modules/nix.nix
