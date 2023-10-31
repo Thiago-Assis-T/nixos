@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, ... }:
+{ inputs, config, pkgs, unstable, ... }:
 
 {
   imports = [
@@ -15,7 +15,7 @@
     username = "thiago";
     homeDirectory = "/home/thiago";
     stateVersion = "22.11";
-    packages = with pkgs; [ htop monero-gui foot ];
+    packages = with pkgs; [ htop monero-gui unstable.foot ];
   };
 
 }
