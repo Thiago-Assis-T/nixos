@@ -23,7 +23,7 @@
     fsType = "vfat";
   };
 
-  fileSystems."/home/thiago/.moneroNode" = {
+  fileSystems."/.moneroNode" = {
     device = "/dev/disk/by-uuid/e1f131f8-83eb-4c06-962e-b4fe7cc1f545";
     fsType = "ext4";
   };
