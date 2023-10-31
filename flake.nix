@@ -23,7 +23,7 @@
   };
 
   outputs = inputs@{ self, home-manager, nixpkgs, nixos-hardware, hyprland
-    , home-manager-stable, utils, ... }:
+    , utils, ... }:
     let
       system = "x86_64-linux";
 
