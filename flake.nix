@@ -46,7 +46,7 @@
 
       nixosConfigurations = {
         ThiagoDesktop = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit system pkgs inputs; };
+          specialArgs = { inherit system pkgs inputs unstable; };
 
           modules = [
             ./hosts/ThiagoDesktop/configuration.nix
