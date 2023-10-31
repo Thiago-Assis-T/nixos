@@ -32,4 +32,5 @@
     xdgOpenUsePortal = true;
     extraPortals = with pkgs; [ xdg-desktop-portal-hyprland ];
   };
+  services.fwupd.enable = true;
 }
