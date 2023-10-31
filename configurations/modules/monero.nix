@@ -4,7 +4,7 @@
   services = {
     monero = {
       enable = true;
-      dataDir = "/home/thiago/.moneroNode/";
+      dataDir = "/home/thiago/.moneroNode/node";
       priorityNodes = [
         "p2pmd.xmrvsbeast.com:18080"
         "nodes.hashvault.pro:18080"
