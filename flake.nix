@@ -17,7 +17,7 @@
     utils.url = "github:gytis-ivaskevicius/flake-utils-plus";
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "unstable";
     };
   };
 
@@ -40,6 +40,9 @@
           allowBroken = true;
         };
       };
+
+      home-manager = import home-manager;
+      home-manager-stable = import home-manager-stable;
     in {
 
       nixosConfigurations = {
