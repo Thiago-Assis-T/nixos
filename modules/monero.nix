@@ -8,7 +8,7 @@
       limits.upload = 1048576;
       limits.download = 1048576;
       rpc = {
-        address = "localhost";
+        address = "127.0.0.1";
         port = 18081;
         restricted = true;
       };
