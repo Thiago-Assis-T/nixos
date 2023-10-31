@@ -234,15 +234,15 @@
       vim.opt.fileencoding = 'utf-8'
     '';
 
-    extraPackages = with pkgs; [
-      nixd
-      ripgrep
-      fd
-      nodejs
-      statix
-      nixfmt
-      tree-sitter
-      gcc
+    extraPackages = [
+      unstable.nixd
+      pkgs.ripgrep
+      pkgs.fd
+      pkgs.nodejs
+      pkgs.statix
+      pkgs.nixfmt
+      pkgs.tree-sitter
+      pkgs.gcc
     ];
   };
   home.sessionVariables = { EDITOR = "nvim"; };
