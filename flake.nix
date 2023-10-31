@@ -3,6 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.05";
+    nixos-hardware.url = "github:nixos/nixos-hardware";
     hyprland.url = "github:hyprwm/Hyprland";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -10,7 +12,8 @@
     };
   };
 
-  outputs = inputs@{ self, home-manager, nixpkgs, hyprland, ... }:
+  outputs =
+    inputs@{ self, home-manager, nixpkgs, nixos-hardware, hyprland, ... }:
     let
       system = "x86_64-linux";
 
@@ -29,6 +32,10 @@
 
           modules = [
             ./hosts/ThiagoDesktop/configuration.nix
+            nixos-hardware.nixosModules.common-cpu-amd
+            nixos-hardware.nixosModules.common-cpu-amd-pstate
+            nixos-hardware.nixosModules.common-pc
+            nixos-hardware.nixosModules.common-pc-hdd
             home-manager.nixosModules.home-manager
             {
               home-manager = {
