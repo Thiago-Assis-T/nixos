@@ -1,4 +1,4 @@
-{ config, pkgs, unstable, ... }: {
+{ config, pkgs, ... }: {
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -234,15 +234,15 @@
       vim.opt.fileencoding = 'utf-8'
     '';
 
-    extraPackages = [
-      unstable.nixd
-      pkgs.ripgrep
-      pkgs.fd
-      pkgs.nodejs
-      pkgs.statix
-      pkgs.nixfmt
-      pkgs.tree-sitter
-      pkgs.gcc
+    extraPackages = with pkgs; [
+      nixd
+      ripgrep
+      fd
+      nodejs
+      statix
+      nixfmt
+      tree-sitter
+      gcc
     ];
   };
   home.sessionVariables = { EDITOR = "nvim"; };
