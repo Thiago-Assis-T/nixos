@@ -10,7 +10,7 @@
     };
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 18080 18081 ];
+      allowedTCPPorts = [ 18080 18081 9050 9063 ];
     };
 
   };
