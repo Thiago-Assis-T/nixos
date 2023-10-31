@@ -41,8 +41,6 @@
         };
       };
 
-      home-manager = import home-manager;
-      home-manager-stable = import home-manager-stable;
     in {
 
       nixosConfigurations = {
@@ -55,7 +53,7 @@
             nixos-hardware.nixosModules.common-cpu-amd-pstate
             nixos-hardware.nixosModules.common-pc
             nixos-hardware.nixosModules.common-pc-ssd
-            home-manager.nixosModules.home-manager-stable
+            home-manager.nixosModules.home-manager-23-05
             {
               home-manager = {
                 useGlobalPkgs = true;
