@@ -21,26 +21,6 @@
     "home-manager": {
       "inputs": {
         "nixpkgs": [
-          "unstable"
-        ]
-      },
-      "locked": {
-        "lastModified": 1698670511,
-        "narHash": "sha256-jQIu3UhBMPHXzVkHQO1O2gg8SVo5lqAVoC6mOaLQcLQ=",
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "rev": "8e5416b478e465985eec274bc3a018024435c106",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "type": "github"
-      }
-    },
-    "home-manager-stable": {
-      "inputs": {
-        "nixpkgs": [
           "nixpkgs"
         ]
       },
@@ -156,7 +136,6 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "home-manager-stable": "home-manager-stable",
         "hyprland": "hyprland",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
