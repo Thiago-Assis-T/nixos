@@ -1,4 +1,5 @@
 { config, ... }: {
+  systemd.network.enable = true;
   networking = {
     hostName = "ThiagoDesktop";
     networkmanager = {
