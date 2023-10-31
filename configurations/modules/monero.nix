@@ -23,13 +23,13 @@
         "b75obarnhi42p7js7wgzo7v3wtiwcgf4bknrwv6ihatop77jivrtwpid.onion:15892"
         "5nvd6jbefgto3u74nzzdkcsbqgxyzrkk7bz5qupsdqg4gbuj5valiaqd.onion:18083"
       ];
-      #p2p-bind-ip=0.0.0.0
-      #p2p-bind-port=18080
       extraConfig = ''
         enforce-dns-checkpointing=1
         public-node=1
         confirm-external-bind=1
         limit-rate=1000
+        p2p-bind-ip=127.0.0.1
+        p2p-bind-port=18080
         no-igd=1
         no-zmq=1
         rpc-ssl=autodetect
