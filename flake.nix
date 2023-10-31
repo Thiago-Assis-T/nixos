@@ -58,7 +58,7 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                extraSpecialArgs = { inherit inputs hyprland; };
+                extraSpecialArgs = { inherit inputs hyprland unstable; };
                 users.thiago = import ./home/home.nix;
               };
             }
