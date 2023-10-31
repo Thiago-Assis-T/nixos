@@ -10,14 +10,15 @@
 
     hyprland.url = "github:hyprwm/Hyprland";
 
-    home-manager-stable = {
-      url = "github:nix-community/home-manager/release-23.05";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     utils.url = "github:gytis-ivaskevicius/flake-utils-plus";
+
+    # home-manager-stable = {
+    #   url = "github:nix-community/home-manager/release-23.05";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "unstable";
+      url = "github:nix-community/home-manager/release-23.05";
+      inputs.nixpkgs.follows = "nixṕkgs";
     };
   };
 
