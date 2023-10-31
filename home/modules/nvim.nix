@@ -1,4 +1,4 @@
-{ config, pkgs,  ... }: {
+{ config, pkgs, ... }: {
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -235,7 +235,7 @@
     '';
 
     extraPackages = with pkgs; [
-      #unstable.nixd
+      nixd
       ripgrep
       fd
       nodejs
