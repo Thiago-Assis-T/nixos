@@ -235,7 +235,7 @@
     '';
 
     extraPackages = [
-      pkgs.unstable.nixd
+      unstable.nixd
       pkgs.ripgrep
       pkgs.fd
       pkgs.nodejs
