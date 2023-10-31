@@ -53,7 +53,7 @@
             nixos-hardware.nixosModules.common-cpu-amd-pstate
             nixos-hardware.nixosModules.common-pc
             nixos-hardware.nixosModules.common-pc-ssd
-            home-manager.nixosModules.home-manager-23-05
+            home-manager.nixosModules.home-manager
             {
               home-manager = {
                 useGlobalPkgs = true;
