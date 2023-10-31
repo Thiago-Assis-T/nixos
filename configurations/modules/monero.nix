@@ -5,6 +5,13 @@
     monero = {
       enable = true;
       dataDir = "/.moneroNode";
+      limits.upload = 1048576;
+      limits.download = 1048576;
+      rpc = {
+        address = "0.0.0.0";
+        port = 18081;
+        restricted = true;
+      };
       priorityNodes = [
         "p2pmd.xmrvsbeast.com:18080"
         "nodes.hashvault.pro:18080"
@@ -16,19 +23,12 @@
         "b75obarnhi42p7js7wgzo7v3wtiwcgf4bknrwv6ihatop77jivrtwpid.onion:15892"
         "5nvd6jbefgto3u74nzzdkcsbqgxyzrkk7bz5qupsdqg4gbuj5valiaqd.onion:18083"
       ];
-      rpc = {
-        address = "0.0.0.0";
-        port = 18081;
-        restricted = true;
-      };
-      limits.upload = 1048576;
-      limits.download = 1048576;
       extraConfig = ''
         enforce-dns-checkpointing=1
         public-node=1
         confirm-external-bind=1
-        p2p-bind-ip=0.0.0.0
-        p2p-bind-port=18080
+        #p2p-bind-ip=0.0.0.0
+        #p2p-bind-port=18080
         limit-rate=1000
         no-igd=1
         no-zmq=1
@@ -44,7 +44,6 @@
         add-peer=xcccrsxi2zknef6zl3sviasqg4xnlkh5k3xqu7ytwkpfli3huyfvsjid.onion:18083
         disable-rpc-ban=1
         tx-proxy="tx-proxy=tor,127.0.0.1:9050,16"
-
       '';
     };
 
