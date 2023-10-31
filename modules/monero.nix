@@ -28,7 +28,7 @@
         public-node=1
         confirm-external-bind=1
         limit-rate=1000
-        p2p-bind-ip=localhost
+        p2p-bind-ip=127.0.0.1
         p2p-bind-port=18080
         no-igd=1
         no-zmq=1
@@ -42,7 +42,7 @@
         add-peer=ozeavjybjbxbvmfcpxzjcn4zklbgohjwwndzenjt44pypvx6jisy74id.onion:18083
         add-peer=xcccrsxi2zknef6zl3sviasqg4xnlkh5k3xqu7ytwkpfli3huyfvsjid.onion:18083
         disable-rpc-ban=1
-        tx-proxy=tor,localhost:9050,16
+        tx-proxy=tor,127.0.0.1:9050,16
       '';
     };
   };
