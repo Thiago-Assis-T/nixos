@@ -28,7 +28,7 @@
           specialArgs = { inherit system pkgs inputs; };
 
           modules = [
-            ./configurations/desktop.nix
+            ./hosts/ThiagoDesktop/configuration.nix
             home-manager.nixosModules.home-manager
             {
               home-manager = {
