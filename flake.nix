@@ -2,21 +2,37 @@
   description = "NixOS Desktop Config:";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.05";
+    unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
+
     nixos-hardware.url = "github:nixos/nixos-hardware";
+
     hyprland.url = "github:hyprwm/Hyprland";
+
+    home-manager-stable = {
+      url = "github:nix-community/home-manager/release-23.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    utils.url = "github:gytis-ivaskevicius/flake-utils-plus";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs =
-    inputs@{ self, home-manager, nixpkgs, nixos-hardware, hyprland, ... }:
+  outputs = inputs@{ self, home-manager, nixpkgs, nixos-hardware, hyprland
+    , home-manager-stable, utils, ... }:
     let
       system = "x86_64-linux";
 
+      unstable = import unstable {
+        inherit system;
+        config = {
+          allowUnfree = true;
+          allowBroken = true;
+        };
+      };
       pkgs = import nixpkgs {
         inherit system;
         config = {
@@ -36,7 +52,7 @@
             nixos-hardware.nixosModules.common-cpu-amd-pstate
             nixos-hardware.nixosModules.common-pc
             nixos-hardware.nixosModules.common-pc-ssd
-            home-manager.nixosModules.home-manager
+            home-manager.nixosModules.home-manager-stable
             {
               home-manager = {
                 useGlobalPkgs = true;
