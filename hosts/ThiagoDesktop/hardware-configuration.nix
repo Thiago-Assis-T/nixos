@@ -5,9 +5,7 @@
     kernelPackages = pkgs.linuxPackages_latest;
     initrd.availableKernelModules =
       [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
-    # initrd.kernelModules = [ "8188eus" ];
     kernelModules = [ "kvm-amd" ];
-    # extraModulePackages = [ config.boot.kernelPackages.rtl8188eus-aircrack ];
   };
   fileSystems = {
     "/" = {
