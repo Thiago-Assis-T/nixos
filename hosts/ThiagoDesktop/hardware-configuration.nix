@@ -2,7 +2,7 @@
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+    # kernelPackages = pkgs.linuxPackages_latest;
     initrd.availableKernelModules =
       [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
     kernelModules = [ "kvm-amd" ];
@@ -24,9 +24,10 @@
     };
   };
 
-  swapDevices = [ ];
-
+  swapDevices =
+    [{ device = "/dev/disk/by-uuid/edf9e667-375b-48b3-82ab-d1dcdf4b99e9"; }];
   networking.useDHCP = lib.mkDefault true;
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = true;
+
 }

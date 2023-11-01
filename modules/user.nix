@@ -1,6 +1,4 @@
-{ config, ... }:
-
-{
+{ config, ... }: {
   users.users.thiago = {
     isNormalUser = true;
     description = "Thiago";
