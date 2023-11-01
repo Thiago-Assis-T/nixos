@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, unstable, ... }: {
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -235,7 +235,7 @@
     '';
 
     extraPackages = with pkgs; [
-      rnix
+      unstable.rnix
       ripgrep
       fd
       nodejs
