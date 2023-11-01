@@ -236,7 +236,7 @@
     '';
 
     extraPackages = with pkgs; [
-      rnix
+      rnix-lsp
       nixd
       ripgrep
       fd
