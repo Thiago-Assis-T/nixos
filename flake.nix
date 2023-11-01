@@ -12,7 +12,7 @@
     utils.url = "github:gytis-ivaskevicius/flake-utils-plus";
 
     home-manager = {
-      url = "github:nix-community/home-manager"; # /release-23.05";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -47,7 +47,7 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                extraSpecialArgs = { inherit inputs hyprland; };
+                extraSpecialArgs = { inherit inputs system pkgs; };
                 users.thiago = import ./home/home.nix;
               };
             }
