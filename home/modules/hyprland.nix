@@ -1,6 +1,6 @@
 { inputs, config, pkgs, ... }: {
   programs.wofi.enable = true;
-  programs.mako.enable = true;
+  services.mako.enable = true;
   home = {
     packages = with pkgs; [ wl-clipboard ];
     sessionVariables = {
