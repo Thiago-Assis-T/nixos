@@ -21,6 +21,7 @@
     enable = true;
     xwayland.enable = true;
     extraConfig = ''
+      exec-once = "foot --server "
       monitor=,preferred,auto,auto
 
       env = XCURSOR_SIZE,24
@@ -125,7 +126,7 @@
       $mainMod = SUPER
 
       # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
-      bind = $mainMod, Return, exec, wezterm
+      bind = $mainMod, Return, exec, footclient
       bind = $mainMod, W, exec, brave --password-store=basic
       bind = $mainMod, Q, killactive,
       bind = $mainMod, M, exit,
