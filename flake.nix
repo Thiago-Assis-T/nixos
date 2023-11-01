@@ -3,7 +3,7 @@
 
   inputs = {
 
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
 
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
@@ -12,7 +12,7 @@
     utils.url = "github:gytis-ivaskevicius/flake-utils-plus";
 
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-23.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
