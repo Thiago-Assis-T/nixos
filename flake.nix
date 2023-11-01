@@ -38,6 +38,7 @@
 
           modules = [
             ./hosts/ThiagoDesktop/configuration.nix
+            utils.nixosModules.autoGenFromInputs
             nixos-hardware.nixosModules.common-cpu-amd
             nixos-hardware.nixosModules.common-cpu-amd-pstate
             nixos-hardware.nixosModules.common-pc
