@@ -16,25 +16,24 @@
     homeDirectory = "/home/thiago";
     stateVersion = "22.11";
     packages = with pkgs; [ htop monero-gui foot ];
-
-    qt = {
-      enable = true;
-      platformTheme = "gnome";
-      style = {
-        name = "adwaita-dark";
-        package = pkgs.adwaita-qt;
-      };
-    };
-
-    # gtk = {
-    #   enable = true;
-    #   theme.package = pkgs.arc-theme;
-    #   theme.name = "Arc-Dark";
-    #   iconTheme.package = pkgs.arc-icon-theme;
-    #   iconTheme.name = "Arc";
-    # };
-
-    xdg.enable = true;
   };
 
+  qt = {
+    enable = true;
+    platformTheme = "gnome";
+    style = {
+      name = "adwaita-dark";
+      package = pkgs.adwaita-qt;
+    };
+  };
+
+  gtk = {
+    enable = true;
+    theme.package = pkgs.arc-theme;
+    theme.name = "Arc-Dark";
+    iconTheme.package = pkgs.arc-icon-theme;
+    iconTheme.name = "Arc";
+  };
+
+  xdg.enable = true;
 }
