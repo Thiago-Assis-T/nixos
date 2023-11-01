@@ -18,6 +18,7 @@
   };
   wayland.windowManager.hyprland = {
     enable = true;
+    wrapperFeatures.base = true;
     xwayland.enable = true;
     extraConfig = ''
       monitor=,preferred,auto,auto
