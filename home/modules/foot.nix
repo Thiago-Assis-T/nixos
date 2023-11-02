@@ -6,7 +6,7 @@
     settings = {
       main = {
 
-        font = "JetBrains Mono:size=14, Symbols Nerd Font:size=13";
+        font = "JetBrains Mono:size=12, Symbols Nerd Font:size=11";
       };
 
       colors = {
