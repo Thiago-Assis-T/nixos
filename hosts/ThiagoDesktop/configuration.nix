@@ -14,7 +14,7 @@
     ../../modules/tor.nix
     ../../modules/printing.nix
   ];
-  environment.systemPackages = with pkgs; [ cpu-x sysbench dmidecode ];
+  environment.systemPackages = with pkgs; [ ];
 
   system = {
     stateVersion = "23.05";
