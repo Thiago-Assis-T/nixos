@@ -22,15 +22,16 @@
     allowedUDPPorts = [ 631 ];
   };
 
-  hardware.printers = {
-    ensurePrinters = [{
-      name = "Epson_L3150_Thiago";
-      location = "Thiago";
-      deviceUri =
-        "usb://EPSON/L3150%20Series?serial=583545564232303674&interface=1";
-      model = "EPSON L3150 Series";
-      ppdOptions = { PageSize = "A4"; };
-    }];
-  };
   environment.systemPackages = with pkgs; [ system-config-printer ];
+
+  # hardware.printers = {
+  #   ensurePrinters = [{
+  #     name = "Epson_L3150_Thiago";
+  #     location = "Thiago";
+  #     deviceUri =
+  #       "usb://EPSON/L3150%20Series?serial=583545564232303674&interface=1";
+  #     model = "epson-escpr.ppd";
+  #     ppdOptions = { PageSize = "A4"; };
+  #   }];
+  # };
 }
