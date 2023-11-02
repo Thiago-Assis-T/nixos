@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [
@@ -13,6 +13,7 @@
     ../../modules/ssh.nix
     ../../modules/tor.nix
   ];
+  environment.systemPackages = with pkgs; [ sysbench  dmidecode ];
 
   system = {
     stateVersion = "23.05";
