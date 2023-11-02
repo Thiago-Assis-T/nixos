@@ -13,7 +13,7 @@
     ../../modules/ssh.nix
     ../../modules/tor.nix
   ];
-  environment.systemPackages = with pkgs; [ sysbench  dmidecode ];
+  environment.systemPackages = with pkgs; [ cpu-x sysbench dmidecode ];
 
   system = {
     stateVersion = "23.05";
