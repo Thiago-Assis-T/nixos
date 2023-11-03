@@ -1,14 +1,18 @@
 { config, containers, ... }: {
-  containers.wasabi = {
-    enable = true;
-    ephemeral = true;
+  containers.dns = {
+    ephemeral = false;
     autoStart = true;
-    extraFlags = [ " -U " ];
     config = { config, pkgs, ... }: {
-      services.httpd.enable = true;
-      services.httpd.adminAddr = "foo@example.org";
-      networking.firewall.allowedTCPPorts = [ 8000 ];
+      services.adguardhome = {
+        enable = true;
+        mutableSettings = true;
+        openFirewall = true;
+        settings.bind_port = 3000;
+      };
 
+      networking.firewall.allowedUDPPorts = [ 53 ];
+
+      system.stateVersion = "23.05";
     };
 
   };
