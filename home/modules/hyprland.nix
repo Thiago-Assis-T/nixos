@@ -21,8 +21,8 @@
     enable = true;
     xwayland.enable = true;
     extraConfig = ''
-      exec-once = "foot --server "
-      exec-once = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
+      exec= "foot --server "
+      exec= "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
       monitor=,preferred,auto,auto
 
       env = XCURSOR_SIZE,24
