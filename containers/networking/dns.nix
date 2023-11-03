@@ -10,7 +10,7 @@
         settings.bind_port = 3000;
       };
 
-      networking.firewall.allowedUDPPorts = [ 53 ];
+      networking.firewall.allowedTCPPorts = [ 53 ];
 
       system.stateVersion = "23.05";
     };
