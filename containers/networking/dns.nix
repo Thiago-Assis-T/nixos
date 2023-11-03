@@ -3,15 +3,9 @@
     ephemeral = false;
     autoStart = true;
     config = { config, pkgs, ... }: {
-      services.adguardhome = {
-        enable = true;
-        mutableSettings = true;
-        openFirewall = true;
-        settings.bind_port = 3000;
-      };
+      services.adguardhome = { enable = true; };
 
-      networking.firewall.allowedTCPPorts = [ 53 ];
-
+      networking.firewall.allowedTCPPorts = [ 80 3000 53 ];
       system.stateVersion = "23.05";
     };
 

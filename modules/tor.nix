@@ -2,13 +2,13 @@
 
 {
   services.tor = {
-    openFirewall = true;
+    openFirewall = false;
     relay = {
-      enable = true;
+      enable = false;
       role = "relay";
     };
-    enable = true;
-    tsocks = { enable = true; };
-    client = { enable = true; };
+    enable = false;
+    tsocks = { enable = false; };
+    client = { enable = false; };
   };
 }

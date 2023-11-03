@@ -3,7 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    # ../../containers/networking/dns.nix
+    ../../containers/networking/dns.nix
     ../../modules/monero.nix
     ../../modules/networking.nix
     ../../modules/nix.nix
