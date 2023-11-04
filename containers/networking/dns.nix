@@ -2,6 +2,14 @@
   containers.dns = {
     ephemeral = true;
     autoStart = true;
+    # extraFlags = [ "-U" ];
+    additionalCapabilities = [ "CAP_NET_BIND_SERVICE" "CAP_NET_RAW" ];
+    allowedDevices = [
+      {
+        modifier = "rwm";
+        node = "/dev/shm";
+      }
+    ];
     config = { config, pkgs, ... }: {
       services.adguardhome = {
         enable = true;
@@ -18,8 +26,10 @@
             protection_enabled = true;
             blocking_mode = "null_ip";
             ratelimit = 0;
-            upstream_dns = ["tls://security.cloudflare-dns.com" "tls://security-filter-dns.cleanbrowsing.org"];
-
+            upstream_dns = [
+              "tls://security.cloudflare-dns.com"
+              "tls://security-filter-dns.cleanbrowsing.org"
+            ];
 
           };
         };
