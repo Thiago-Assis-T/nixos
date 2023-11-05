@@ -3,7 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../containers/networking/dns.nix
+    # ../../containers/networking/dns.nix
     ../../modules/monero.nix
     ../../modules/networking.nix
     ../../modules/nix.nix
@@ -12,7 +12,7 @@
     ../../modules/locale.nix
     ../../modules/boot.nix
     ../../modules/ssh.nix
-    ../../modules/tor.nix
+    #../../modules/tor.nix
     ../../modules/printing.nix
   ];
   environment.systemPackages = with pkgs; [ ];
