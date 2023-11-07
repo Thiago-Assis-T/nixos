@@ -13,7 +13,7 @@
     ../../modules/boot.nix
     ../../modules/ssh.nix
     #../../modules/tor.nix
-    ../../modules/printing.nix
+    # ../../modules/printing.nix
   ];
   environment.systemPackages = with pkgs; [ ];
 
