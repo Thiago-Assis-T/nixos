@@ -17,7 +17,7 @@
     username = "thiago";
     homeDirectory = "/home/thiago";
     stateVersion = "22.11";
-    packages = with pkgs; [ htop monero-gui hypnotix ];
+    packages = with pkgs; [ htop monero-gui ];
   };
 
   xdg.enable = true;

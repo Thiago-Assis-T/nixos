@@ -20,8 +20,8 @@
     enable = true;
     xwayland.enable = true;
     extraConfig = ''
-      exec= "foot --server "
-      exec= "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
+      exec=foot --server
+      exec=${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1
       monitor=,preferred,auto,auto
 
       env = XCURSOR_SIZE,24
@@ -49,7 +49,7 @@
           gaps_in = 5
           gaps_out = 20
           border_size = 2
-          col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
+          col.active_border =  rgba(7dcfffff) rgba(7aa2f7ff) 45deg
           col.inactive_border = rgba(595959aa)
 
           layout = dwindle
