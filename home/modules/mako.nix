@@ -9,6 +9,7 @@
     borderSize = 2;
     defaultTimeout = 6500;
     icons = true;
+    maxIconSize = 32;
 
   };
 

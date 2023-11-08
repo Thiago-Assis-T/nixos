@@ -20,6 +20,9 @@
   programs.dconf.enable = true;
   security.rtkit.enable = true;
   services = {
+    gvfs.enable = true;
+    udisks2.enable = true;
+    devmon.enable = true;
     pipewire = {
       enable = true;
       alsa = {

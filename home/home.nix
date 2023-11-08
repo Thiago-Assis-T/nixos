@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, ... }:
+{ unstable-pkgs, inputs, config, pkgs, ... }:
 
 {
   imports = [
@@ -17,7 +17,7 @@
     username = "thiago";
     homeDirectory = "/home/thiago";
     stateVersion = "22.11";
-    packages = with pkgs; [ htop monero-gui ];
+    packages = with pkgs; [xfce.thunar glib htop monero-gui ];
   };
 
   xdg.enable = true;

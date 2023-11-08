@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, lib, ... }: {
   programs.wofi.enable = true;
   home = {
     packages = with pkgs; [ wl-clipboard ];
@@ -13,7 +13,9 @@
       XDG_SESSION_DESKTOP = "Hyprland";
       QT_AUTO_SCREEN_SCALE_FACTOR = "1";
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-      QT_QPA_PLATFORMTHEME = "gnome";
+      XCURSOR_SIZE = "20";
+      WLR_NO_HARDWARE_CURSORS = "1";
+      QT_QPA_PLATFORMTHEME = lib.mkForce "gtk";
     };
   };
   wayland.windowManager.hyprland = {
@@ -24,7 +26,6 @@
       exec=${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1
       monitor=,preferred,auto,auto
 
-      env = XCURSOR_SIZE,24
 
       # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
       input {
