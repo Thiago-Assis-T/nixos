@@ -1,6 +1,5 @@
-{ inputs, config, pkgs, ... }: {
+{ config, pkgs, ... }: {
   programs.wofi.enable = true;
-  services.mako.enable = true;
   home = {
     packages = with pkgs; [ wl-clipboard ];
     sessionVariables = {
@@ -133,7 +132,7 @@
       bind = $mainMod, M, exit,
       bind = $mainMod, E, exec, dolphin
       bind = $mainMod, V, togglefloating,
-      bind = $mainMod, R, exec, wofi --show drun
+      bind = $mainMod, R, exec, wofi -I -m -b -a --show drun
       bind = $mainMod, P, pseudo, # dwindle
       bind = $mainMod, J, togglesplit, # dwindle
 
