@@ -2,7 +2,7 @@
   environment.systemPackages = with pkgs; [ ];
   programs.steam = {
     enable = true;
-    package = unstable-pkgs.steam;
+    package = pkgs.steam;
   };
   hardware = {
     opengl.driSupport32Bit = true;
