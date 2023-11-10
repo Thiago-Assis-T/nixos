@@ -1,7 +1,8 @@
-{ config, lib, pkgs, modulesPath, ... }: {
+{ config, lib, pkgs, modulesPath,  ... }: {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
   boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
     initrd.availableKernelModules =
       [ "amdgpu" "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
     kernelModules = [ "amdgpu" "kvm-amd" ];
