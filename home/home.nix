@@ -17,7 +17,7 @@
     username = "thiago";
     homeDirectory = "/home/thiago";
     stateVersion = "22.11";
-    packages = with pkgs; [xfce.thunar glib htop monero-gui ];
+    packages = with pkgs; [ xfce.thunar htop monero-gui unstable-pkgs.slack unstable-pkgs.zoom-us];
   };
 
   xdg.enable = true;
