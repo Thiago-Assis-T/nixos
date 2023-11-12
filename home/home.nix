@@ -17,7 +17,14 @@
     username = "thiago";
     homeDirectory = "/home/thiago";
     stateVersion = "22.11";
-    packages = with pkgs; [ xfce.thunar htop monero-gui unstable-pkgs.slack unstable-pkgs.zoom-us];
+    packages = with pkgs; [
+      xfce.thunar
+      htop
+      monero-gui
+      unstable-pkgs.slack
+      unstable-pkgs.zoom-us
+      bat
+    ];
   };
 
   xdg.enable = true;
