@@ -4,7 +4,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/monero.nix
-    ../../modules/steam.nix
+    ../../modules/games.nix
     ../../modules/networking.nix
     ../../modules/nix.nix
     ../../modules/services.nix
