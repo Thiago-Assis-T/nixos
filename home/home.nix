@@ -24,7 +24,7 @@
       unstable-pkgs.slack
       unstable-pkgs.zoom-us
       bat
-      unstable-pkgs.mediawriter
+      popsicle
     ];
   };
 
