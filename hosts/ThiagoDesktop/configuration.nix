@@ -20,8 +20,8 @@
     stateVersion = "23.05";
     autoUpgrade = {
       enable = true;
-      operation = "switch";
-      allowReboot = false;
+      operation = "boot";
+      allowReboot = true;
       flake = "/home/thiago/nixos/#ThiagoDesktop";
       flags = [ "--update-input" "nixpkgs" "-L" ];
       dates = "daily";
