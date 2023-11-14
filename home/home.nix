@@ -23,7 +23,6 @@
       unstable-pkgs.slack
       unstable-pkgs.zoom-us
       bat
-      popsicle
     ];
   };
 
