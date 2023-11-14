@@ -19,7 +19,16 @@
   };
   programs.dconf.enable = true;
   security.rtkit.enable = true;
+  programs.hyprland.enable = true;
   services = {
+    xserver = {
+      enable = true;
+      displayManager = {
+        # defaultSession = "Hyprland";
+        sddm = { enable = true; };
+      };
+    };
+
     gvfs.enable = true;
     udisks2.enable = true;
     devmon.enable = true;
@@ -50,7 +59,10 @@
     enable = true;
     wlr.enable = true;
     xdgOpenUsePortal = true;
-    extraPortals = with pkgs; [ xdg-desktop-portal-hyprland ];
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-wlr
+      xdg-desktop-portal-hyprland
+    ];
   };
   services.fwupd.enable = true;
 }

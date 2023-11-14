@@ -131,7 +131,7 @@
       bind = $mainMod, W, exec, brave --password-store=basic
       bind = $mainMod, Q, killactive,
       bind = $mainMod, M, exit,
-      bind = $mainMod, E, exec, dolphin
+      bind = $mainMod, E, exec, thunar
       bind = $mainMod, V, togglefloating,
       bind = $mainMod, R, exec, wofi -I -m -b -a --show drun
       bind = $mainMod, P, pseudo, # dwindle

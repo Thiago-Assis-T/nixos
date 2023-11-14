@@ -20,7 +20,6 @@
     packages = with pkgs; [
       xfce.thunar
       htop
-      monero-gui
       unstable-pkgs.slack
       unstable-pkgs.zoom-us
       bat

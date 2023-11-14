@@ -8,11 +8,7 @@
         macAddress = "random";
       };
     };
-    firewall = {
-      enable = true;
-      allowedTCPPorts = [ 18080 18081 3000 ];
-      allowedUDPPorts = [ 51820 ];
-    };
+    firewall = { enable = true; };
   };
 
 }
