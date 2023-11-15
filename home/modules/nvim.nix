@@ -53,6 +53,24 @@
       cmp-fuzzy-path
       cmp-fuzzy-buffer
       {
+        plugin = copilot-cmp;
+        type = "lua";
+        config = ''
+          require("copilot_cmp").setup()
+        '';
+      }
+      {
+        plugin = copilot-lua;
+        type = "lua";
+        config = ''
+          require('copilot').setup({
+            suggestion = { enabled = false },
+            panel = { enabled = false },
+          })
+           require("copilot_cmp").setup()
+        '';
+      }
+      {
         plugin = nvim-treesitter;
         type = "lua";
         config = ''
@@ -292,6 +310,7 @@
             sources = cmp.config.sources({
               { name = 'nvim_lsp' },
               { name = 'luasnip' },
+              { name = 'copilot', },
               { name = 'fuzzy_path'},
               { name = 'fuzzy_buffer', keyword_length = 5 },
             }),
@@ -301,6 +320,7 @@
                 -- Kind icons
                 vim_item.kind = string.format('%s', kind_icons[vim_item.kind])
                 vim_item.menu = ({
+                  copilot = '[copilot]',
                   nvim_lsp = '[LSP]',
                   luasnip = '[Snippet]',
                   buffer = '[Buffer]',

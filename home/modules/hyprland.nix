@@ -1,5 +1,7 @@
 { config, pkgs, lib, ... }: {
   programs.wofi.enable = true;
+  programs.wlogout.enable = true;
+
   home = {
     packages = with pkgs; [ wl-clipboard ];
     sessionVariables = {
@@ -134,6 +136,7 @@
       bind = $mainMod, E, exec, thunar
       bind = $mainMod, V, togglefloating,
       bind = $mainMod, R, exec, wofi -I -m -b -a --show drun
+      bind = $mainMod, Escape, exec, wlogout
       bind = $mainMod, P, pseudo, # dwindle
       bind = $mainMod, J, togglesplit, # dwindle
 

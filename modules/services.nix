@@ -25,7 +25,7 @@
       enable = true;
       displayManager = {
         # defaultSession = "Hyprland";
-        sddm = { enable = true; };
+        gdm = { enable = true; };
       };
     };
 
