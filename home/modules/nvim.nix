@@ -64,11 +64,20 @@
         type = "lua";
         config = ''
           require('copilot').setup({
-            suggestion = { enabled = false },
-            panel = { enabled = false },
+            panel = {
+              enabled = false,
+            },
+            suggestion = {
+              enabled = false,
+            },
+            filetypes = {
+            },
+            copilot_node_command = 'node',
+            server_opts_overrides = {},
           })
-           require("copilot_cmp").setup()
+
         '';
+
       }
       {
         plugin = nvim-treesitter;
