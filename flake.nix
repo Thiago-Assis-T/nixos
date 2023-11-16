@@ -27,7 +27,6 @@
         inherit system;
         config = {
           allowUnfree = true;
-          # allowBroken = true;
         };
       };
 
@@ -35,7 +34,6 @@
         inherit system;
         config = {
           allowUnfree = true;
-          # allowBroken = true;
         };
       };
 

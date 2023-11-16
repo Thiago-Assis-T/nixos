@@ -7,9 +7,9 @@
     backgroundColor = "#1a1b26";
     borderRadius = 5;
     borderSize = 2;
-    defaultTimeout = 6500;
+    defaultTimeout = 3000;
     icons = true;
-    maxIconSize = 32;
+    maxIconSize = 16;
 
   };
 
