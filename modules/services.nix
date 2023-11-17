@@ -24,8 +24,7 @@
     xserver = {
       enable = true;
       displayManager = {
-        # defaultSession = "Hyprland";
-        lightdm = { enable = true; };
+        gdm = { enable = true; };
       };
     };
 
