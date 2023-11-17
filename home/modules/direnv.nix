@@ -4,7 +4,7 @@
   programs.direnv = {
     enable = true;
     enableBashIntegration = true;
-    direnv.nix-direnv.enable = true;
+    nix-direnv.enable = true;
   };
 
 }

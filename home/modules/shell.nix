@@ -3,8 +3,9 @@
     bash = {
       enable = true;
       enableCompletion = true;
-      shellAliases = { htop = "sudo htop"; 
-      cat = "bat";
+      shellAliases = {
+        htop = "sudo htop";
+        cat = "bat";
       };
     };
     starship = {
