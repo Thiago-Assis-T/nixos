@@ -401,6 +401,17 @@
           })
         '';
       }
+      {
+        plugin = autoclose-nvim;
+        type = "lua";
+        config = ''
+          require("autoclose").setup({
+            keys = {
+              ["<"] = { escape = false, close = true, pair = "<>" },
+            }
+          })
+        '';
+      }
     ];
 
     extraPackages = with pkgs; [
@@ -415,7 +426,6 @@
       nodePackages.typescript-language-server
       nodePackages.eslint
       nodePackages.eslint_d
-      #nodePackages.prettier
     ];
   };
   home.sessionVariables = { EDITOR = "nvim"; };
