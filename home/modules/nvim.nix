@@ -53,31 +53,15 @@
       cmp-fuzzy-path
       cmp-fuzzy-buffer
       {
-        plugin = copilot-cmp;
+        plugin = autoclose-nvim;
         type = "lua";
         config = ''
-          require("copilot_cmp").setup()
-        '';
-      }
-      {
-        plugin = copilot-lua;
-        type = "lua";
-        config = ''
-          require('copilot').setup({
-            panel = {
-              enabled = false,
-            },
-            suggestion = {
-              enabled = false,
-            },
-            filetypes = {
-            },
-            copilot_node_command = 'node',
-            server_opts_overrides = {},
+          require("autoclose").setup({
+            keys = {
+              ["<"] = { escape = false, close = true, pair = "<>" },
+            }
           })
-
         '';
-
       }
       {
         plugin = nvim-treesitter;
@@ -155,35 +139,6 @@
         '';
       }
       {
-        plugin = telescope-nvim;
-        type = "lua";
-        config = ''
-          require('telescope').setup({})
-          require('telescope').load_extension('fzf')
-          vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
-          vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
-          vim.keymap.set('n', '<leader>/', function()
-            -- You can pass additional configuration to telescope to change theme, layout, etc.
-            require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({
-              winblend = 10,
-              previewer = false,
-            }))
-          end, { desc = '[/] Fuzzily search in current buffer' })
-
-          vim.keymap.set('n', '<leader>ft', require('telescope.builtin').git_files, { desc = '[F]ind gi[T]' })
-          vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = '[F]ind  [F]iles' })
-          vim.keymap.set('n', '<leader>fh', require('telescope.builtin').help_tags, { desc = '[F]ind [H]elp' })
-          vim.keymap.set('n', '<leader>fw', require('telescope.builtin').grep_string, { desc = '[F]ind [W]ord' })
-          vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, { desc = '[F]ind [G]rep' })
-          vim.keymap.set('n', '<leader>fd', require('telescope.builtin').diagnostics, { desc = '[F]ind [D]iagnostics' })
-        '';
-      }
-      {
-        plugin = gitsigns-nvim;
-        type = "lua";
-        config = "require('gitsigns').setup()";
-      }
-      {
         plugin = nvim-lspconfig;
         type = "lua";
         config = ''
@@ -250,18 +205,51 @@
         '';
       }
       {
-        plugin = luasnip;
+        plugin = telescope-nvim;
         type = "lua";
         config = ''
-          require("luasnip.loaders.from_vscode").lazy_load()
-          vim.keymap.set({"i"}, "<C-K>", function() ls.expand() end, {silent = true})
-          vim.keymap.set({"i", "s"}, "<C-L>", function() ls.jump( 1) end, {silent = true})
-          vim.keymap.set({"i", "s"}, "<C-J>", function() ls.jump(-1) end, {silent = true})
-          vim.keymap.set({"i", "s"}, "<C-E>", function()
-          if ls.choice_active() then
-            ls.change_choice(1)
-          end
-          end, {silent = true})
+          require('telescope').setup({})
+          require('telescope').load_extension('fzf')
+          vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
+          vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
+          vim.keymap.set('n', '<leader>/', function()
+            -- You can pass additional configuration to telescope to change theme, layout, etc.
+            require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({
+              winblend = 10,
+              previewer = false,
+            }))
+          end, { desc = '[/] Fuzzily search in current buffer' })
+
+          vim.keymap.set('n', '<leader>ft', require('telescope.builtin').git_files, { desc = '[F]ind gi[T]' })
+          vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = '[F]ind  [F]iles' })
+          vim.keymap.set('n', '<leader>fh', require('telescope.builtin').help_tags, { desc = '[F]ind [H]elp' })
+          vim.keymap.set('n', '<leader>fw', require('telescope.builtin').grep_string, { desc = '[F]ind [W]ord' })
+          vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, { desc = '[F]ind [G]rep' })
+          vim.keymap.set('n', '<leader>fd', require('telescope.builtin').diagnostics, { desc = '[F]ind [D]iagnostics' })
+        '';
+      }
+      {
+        plugin = gitsigns-nvim;
+        type = "lua";
+        config = "require('gitsigns').setup()";
+      }
+      {
+        plugin = copilot-lua;
+        type = "lua";
+        config = ''
+          require('copilot').setup({
+            panel = {
+              enabled = false,
+            },
+            suggestion = {
+              enabled = false,
+            },
+            filetypes = {
+            },
+            copilot_node_command = 'node',
+            server_opts_overrides = {},
+          })
+
         '';
 
       }
@@ -342,6 +330,29 @@
         '';
       }
       {
+        plugin = copilot-cmp;
+        type = "lua";
+        config = ''
+          require("copilot_cmp").setup()
+        '';
+      }
+      {
+        plugin = luasnip;
+        type = "lua";
+        config = ''
+          require("luasnip.loaders.from_vscode").lazy_load()
+          vim.keymap.set({"i"}, "<C-K>", function() ls.expand() end, {silent = true})
+          vim.keymap.set({"i", "s"}, "<C-L>", function() ls.jump( 1) end, {silent = true})
+          vim.keymap.set({"i", "s"}, "<C-J>", function() ls.jump(-1) end, {silent = true})
+          vim.keymap.set({"i", "s"}, "<C-E>", function()
+          if ls.choice_active() then
+            ls.change_choice(1)
+          end
+          end, {silent = true})
+        '';
+
+      }
+      {
         plugin = nvim-lint;
         type = "lua";
         config = ''
@@ -398,17 +409,6 @@
                 require('formatter.filetypes.any').remove_trailing_whitespace,
               },
             },
-          })
-        '';
-      }
-      {
-        plugin = autoclose-nvim;
-        type = "lua";
-        config = ''
-          require("autoclose").setup({
-            keys = {
-              ["<"] = { escape = false, close = true, pair = "<>" },
-            }
           })
         '';
       }
