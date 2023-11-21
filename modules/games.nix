@@ -1,6 +1,8 @@
-{ config, pkgs, unstable-pkgs, ... }: {
+{ config, pkgs, unstable-pkgs, inputs, ... }: {
+  environment.systemPackages =
+    [ inputs.nix-gaming.packages.${pkgs.system}.proton-ge ];
   programs.steam = {
-    enable = false;
+    enable = true;
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
     gamescopeSession.enable = true;

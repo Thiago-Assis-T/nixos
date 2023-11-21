@@ -9,9 +9,9 @@
 
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
-    hyprland.url = "github:hyprwm/Hyprland";
-
     utils.url = "github:gytis-ivaskevicius/flake-utils-plus";
+
+    nix-gaming.url = "github:fufexan/nix-gaming";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-23.05";
@@ -25,16 +25,12 @@
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
-        config = {
-          allowUnfree = true;
-        };
+        config = { allowUnfree = true; };
       };
 
       unstable-pkgs = import unstable {
         inherit system;
-        config = {
-          allowUnfree = true;
-        };
+        config = { allowUnfree = true; };
       };
 
     in {
@@ -51,6 +47,7 @@
             nixos-hardware.nixosModules.common-pc
             nixos-hardware.nixosModules.common-pc-ssd
             home-manager.nixosModules.home-manager
+            inputs.nix-gaming.nixosModules.pipewireLowLatency
             {
               home-manager = {
                 useGlobalPkgs = true;

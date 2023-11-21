@@ -2,13 +2,10 @@
 
 {
   imports = [
-    inputs.hyprland.homeManagerModules.default
     ./modules/shell.nix
     ./modules/direnv.nix
     ./modules/git.nix
-    ./modules/mako.nix
     ./modules/nvim.nix
-    ./modules/hyprland.nix
     ./modules/browser.nix
     ./modules/foot.nix
     ./modules/theming.nix
