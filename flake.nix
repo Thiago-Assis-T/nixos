@@ -20,7 +20,7 @@
   };
 
   outputs = inputs@{ self, home-manager, nixpkgs, unstable, nixos-hardware
-    , hyprland, utils, ... }:
+    , utils, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {

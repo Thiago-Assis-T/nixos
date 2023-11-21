@@ -19,7 +19,6 @@
   };
   programs.dconf.enable = true;
   security.rtkit.enable = true;
-  programs.hyprland.enable = true;
   services = {
     xserver = {
       layout = "br";
@@ -61,7 +60,7 @@
     xdgOpenUsePortal = true;
     extraPortals = with pkgs; [
       xdg-desktop-portal-wlr
-      xdg-desktop-portal-hyprland
+      xdg-desktop-portal-gtk
     ];
   };
   services.fwupd.enable = true;
