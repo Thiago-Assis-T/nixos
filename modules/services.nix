@@ -22,10 +22,10 @@
   programs.hyprland.enable = true;
   services = {
     xserver = {
+      layout = "br";
       enable = true;
-      displayManager = {
-        gdm = { enable = true; };
-      };
+      desktopManager.gnome.enable = true;
+      displayManager = { gdm = { enable = true; }; };
     };
 
     gvfs.enable = true;
@@ -46,6 +46,7 @@
   };
 
   hardware = {
+    pulseaudio.enable = false;
     opengl = {
       enable = true;
       driSupport = true;

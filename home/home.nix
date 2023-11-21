@@ -26,6 +26,6 @@
       bat
     ];
   };
-
+  services.gnome-keyring.enable = true;
   xdg.enable = true;
 }
