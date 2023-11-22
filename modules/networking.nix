@@ -1,6 +1,5 @@
 { config, ... }: {
   networking = {
-    hostName = "ThiagoDesktop";
     networkmanager = {
       enable = true;
       wifi = {

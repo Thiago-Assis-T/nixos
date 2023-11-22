@@ -15,6 +15,7 @@
   ];
   environment.systemPackages = with pkgs; [ ];
 
+  networking.hostName = "ThiagoDesktop";
   system = {
     stateVersion = "23.05";
     autoUpgrade = {
