@@ -36,6 +36,32 @@
     in {
 
       nixosConfigurations = {
+        ThiagoLaptop = nixpkgs.lib.nixosSystem {
+	  specialArgs = {inherit inputs pkgs unstable-pkgs system; };
+          modules = [
+            ./hosts/ThiagoLaptop/configuration.nix
+            utils.nixosModules.autoGenFromInputs
+	    nixos-hardware.nixosModules.common-cpu-intel
+            nixos-hardware.nixosModules.common-pc
+ 	    nixos-hardware.nixosModules.common-pc-ssd
+            nixos-hardware.nixosModules.common-pc-laptop
+            nixos-hardware.nixosModules.common-pc-laptop-acpi_call
+            nixos-hardware.nixosModules.common-gpu-intel
+            nixos-hardware.nixosModules.common-gpu-nvidia-disable
+            home-manager.nixosModules.home-manager
+            inputs.nix-gaming.nixosModules.pipewireLowLatency
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                extraSpecialArgs = {
+                  inherit inputs system pkgs unstable-pkgs;
+                };
+                users.thiago = import ./home/home.nix;
+              };
+            }
+          ];
+        };
         ThiagoDesktop = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit system pkgs unstable-pkgs inputs; };
 
