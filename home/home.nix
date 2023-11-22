@@ -16,7 +16,6 @@
     homeDirectory = "/home/thiago";
     stateVersion = "22.11";
     packages = with pkgs; [
-      xfce.thunar
       htop
       unstable-pkgs.slack
       unstable-pkgs.zoom-us

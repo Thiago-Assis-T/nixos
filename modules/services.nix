@@ -24,7 +24,12 @@
       layout = "br";
       enable = true;
       desktopManager.gnome.enable = true;
-      displayManager = { gdm = { enable = true; }; };
+      displayManager = {
+        gdm = {
+          enable = true;
+          wayland = true;
+        };
+      };
     };
 
     gvfs.enable = true;
@@ -58,9 +63,7 @@
     enable = true;
     wlr.enable = true;
     xdgOpenUsePortal = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-wlr
-    ];
+    extraPortals = with pkgs; [ xdg-desktop-portal-wlr ];
   };
   services.fwupd.enable = true;
 }
