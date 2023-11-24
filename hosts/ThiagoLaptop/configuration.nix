@@ -1,7 +1,7 @@
 { config, pkgs, ... }: {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/games.nix
+    # ../../modules/games.nix
     ../../modules/networking.nix
     ../../modules/nix.nix
     ../../modules/services.nix
