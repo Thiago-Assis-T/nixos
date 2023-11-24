@@ -39,7 +39,7 @@
       enable = true;
       operation = "boot";
       allowReboot = true;
-      flake = "/home/thiago/nixos/#ThiagoDesktop";
+      flake = "/home/thiago/nixos/#ThiagoLaptop";
       flags = [ "--update-input" "nixpkgs" "-L" ];
       dates = "daily";
       rebootWindow = {
