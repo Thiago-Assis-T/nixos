@@ -1,7 +1,7 @@
 { config, pkgs, ... }: {
 
   services.printing = {
-    enable = false;
+    enable = true;
   };
 
 
