@@ -10,7 +10,7 @@
     ../../modules/boot.nix
     ../../modules/ssh.nix
     ../../modules/printing.nix
-    # ../../modules/nvidia.nix
+    ../../modules/nvidia.nix
   ];
 
   services.xserver.libinput.enable = true;
