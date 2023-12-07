@@ -35,7 +35,7 @@
       vim.opt.scrolloff = 8
       vim.opt.updatetime = 50
 
-      vim.opt.clipboard = 'unnamedplus'
+      -- vim.opt.clipboard = 'unnamedplus'
       vim.opt.cmdheight = 2
       vim.opt.completeopt = { 'menuone', 'noselect' }
       vim.opt.conceallevel = 0
