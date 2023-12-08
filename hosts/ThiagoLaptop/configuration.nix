@@ -15,6 +15,8 @@
 
   services.xserver.libinput.enable = true;
 
+  networking.hostName = "ThiagoLaptop";
+
   nix.settings.system-features = [ "gccarch-skylake" ];
   nixpkgs = {
     localSystem = {
