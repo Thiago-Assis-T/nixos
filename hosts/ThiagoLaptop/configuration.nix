@@ -15,8 +15,14 @@
 
   services.xserver.libinput.enable = true;
 
-  environment.systemPackages = with pkgs; [ ];
-
+  nix.settings.system-features = [ "gccarch-skylake" ];
+  nixpkgs = {
+    localSystem = {
+      system = "x86_64-linux";
+      gcc.arch = "skylake";
+      gcc.tune = "skylake";
+    };
+  };
   system = {
     stateVersion = "23.05";
     autoUpgrade = {
