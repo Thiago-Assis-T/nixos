@@ -16,6 +16,7 @@
     homeDirectory = "/home/thiago";
     stateVersion = "22.11";
     packages = with pkgs; [
+      wl-clipboard
       htop
       unstable-pkgs.slack
       unstable-pkgs.zoom-us

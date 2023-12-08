@@ -35,12 +35,19 @@
       vim.opt.scrolloff = 8
       vim.opt.updatetime = 50
 
-      -- vim.opt.clipboard = 'unnamedplus'
+      vim.opt.clipboard = 'unnamedplus'
       vim.opt.cmdheight = 2
       vim.opt.completeopt = { 'menuone', 'noselect' }
       vim.opt.conceallevel = 0
       vim.spelllang = 'en_ca'
       vim.opt.fileencoding = 'utf-8'
+
+      vim.keymap.set('n', '<leader>tt', vim.cmd.tabnew,{silent = true} )
+      vim.keymap.set('n', '<leader>tn', vim.cmd.tabNext,{silent = true} )
+      vim.keymap.set('n', '<leader>tp', vim.cmd.tabprevious,{silent = true} )
+      vim.keymap.set('n', '<leader>tx', vim.cmd.tabclose,{silent = true} )
+
+
     '';
     plugins = with pkgs.vimPlugins; [
       nvim-treesitter.withAllGrammars
