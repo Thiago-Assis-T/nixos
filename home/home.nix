@@ -15,13 +15,7 @@
     username = "thiago";
     homeDirectory = "/home/thiago";
     stateVersion = "22.11";
-    packages = with pkgs; [
-      wl-clipboard
-      htop
-      unstable-pkgs.slack
-      unstable-pkgs.zoom-us
-      bat
-    ];
+    packages = with pkgs; [ wl-clipboard htop bat ];
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
       QT_QPA_PLATFORM = "wayland";
