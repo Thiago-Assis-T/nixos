@@ -60,6 +60,16 @@
       cmp-fuzzy-path
       cmp-fuzzy-buffer
       {
+        plugin = codeium-vim;
+        type = "lua";
+        config = ''
+          vim.keymap.set('i', '<M-cr>', function () return vim.fn['codeium#Accept']() end, { expr = true })
+          vim.keymap.set('i', '<M-=>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
+          vim.keymap.set('i', '<M-->', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
+          vim.keymap.set('i', '<M-x>', function() return vim.fn['codeium#Clear']() end, { expr = true })
+        '';
+      }
+      {
         plugin = autoclose-nvim;
         type = "lua";
         config = ''
@@ -241,26 +251,6 @@
         config = "require('gitsigns').setup()";
       }
       {
-        plugin = copilot-lua;
-        type = "lua";
-        config = ''
-          require('copilot').setup({
-            panel = {
-              enabled = false,
-            },
-            suggestion = {
-              enabled = false,
-            },
-            filetypes = {
-            },
-            copilot_node_command = 'node',
-            server_opts_overrides = {},
-          })
-
-        '';
-
-      }
-      {
         plugin = nvim-cmp;
         type = "lua";
         config = ''
@@ -314,7 +304,6 @@
             sources = cmp.config.sources({
               { name = 'nvim_lsp' },
               { name = 'luasnip' },
-              { name = 'copilot', },
               { name = 'fuzzy_path'},
               { name = 'fuzzy_buffer', keyword_length = 5 },
             }),
@@ -324,7 +313,6 @@
                 -- Kind icons
                 vim_item.kind = string.format('%s', kind_icons[vim_item.kind])
                 vim_item.menu = ({
-                  copilot = '[copilot]',
                   nvim_lsp = '[LSP]',
                   luasnip = '[Snippet]',
                   buffer = '[Buffer]',
@@ -334,13 +322,6 @@
               end,
             },
           })
-        '';
-      }
-      {
-        plugin = copilot-cmp;
-        type = "lua";
-        config = ''
-          require("copilot_cmp").setup()
         '';
       }
       {
@@ -428,6 +409,7 @@
       nodejs
       statix
       nixfmt
+      codeium
       tree-sitter
       gcc
       nodePackages.typescript-language-server
