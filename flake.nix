@@ -37,7 +37,9 @@
 
       nixosConfigurations = {
         ThiagoLaptop = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs pkgs unstable-pkgs system; };
+          specialArgs = {
+            inherit nixos-hardware inputs pkgs unstable-pkgs system;
+          };
           modules = [
             ./hosts/ThiagoLaptop/configuration.nix
             utils.nixosModules.autoGenFromInputs
@@ -47,8 +49,6 @@
             nixos-hardware.nixosModules.common-pc-laptop
             nixos-hardware.nixosModules.common-pc-laptop-acpi_call
             nixos-hardware.nixosModules.common-gpu-intel
-            #nixos-hardware.nixosModules.common-gpu-nvidia-disable
-            nixos-hardware.nixosModules.common-gpu-nvidia
             home-manager.nixosModules.home-manager
             inputs.nix-gaming.nixosModules.pipewireLowLatency
             inputs.nix-gaming.nixosModules.steamCompat
