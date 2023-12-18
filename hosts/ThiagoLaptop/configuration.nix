@@ -1,7 +1,7 @@
 { config, pkgs, nixos-hardware, ... }: {
   imports = [
     ./hardware-configuration.nix
-    # ./specialisation.nix
+    ./specialisation.nix
     ../../modules/games.nix
     ../../modules/networking.nix
     ../../modules/nix.nix
@@ -32,7 +32,7 @@
       operation = "boot";
       allowReboot = true;
       flake = "/home/thiago/nixos/#ThiagoLaptop";
-      flags = [ "--update-input" "nixpkgs" "-L" ];
+      flags = [ "--update-input" "nixpkgs" "-L" "--no-write-to-lock-file" ];
       dates = "daily";
       rebootWindow = {
         lower = "01:00";

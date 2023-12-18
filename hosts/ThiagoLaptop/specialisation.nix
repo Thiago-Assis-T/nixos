@@ -1,6 +1,15 @@
-{ config, nixos-hardware, ... }: {
+{ config, nixos-hardware, lib, ... }: {
   specialisation = {
+    on-the-go.configuration = {
+      powerManagement.cpuFreqGovernor = lib.mkForce "powersave";
+      system.nixos.tags = [ "on-the-go" ];
+      imports = [ nixos-hardware.nixosModules.common-gpu-nvidia-disable ];
+      system.autoUpgrade.enable = lib.mkForce false;
+
+    };
     performance.configuration = {
+
+      powerManagement.cpuFreqGovernor = lib.mkForce "performance";
       system.nixos.tags = [ "performance" ];
       imports = [ nixos-hardware.nixosModules.common-gpu-nvidia ];
 
