@@ -9,6 +9,7 @@
     ./modules/browser.nix
     ./modules/foot.nix
     ./modules/theming.nix
+    ./modules/hyprland.nix
   ];
   fonts.fontconfig.enable = true;
   home = {

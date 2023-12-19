@@ -1,7 +1,6 @@
 { config, pkgs, lib, ... }: {
   programs.wofi.enable = true;
   programs.wlogout.enable = true;
-
   home = {
     packages = with pkgs; [ wl-clipboard ];
     sessionVariables = {
@@ -23,7 +22,9 @@
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
+    enableNvidiaPatches = true;
     extraConfig = ''
+
       exec=foot --server
       exec=${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1
       monitor=,preferred,auto,auto
@@ -130,7 +131,7 @@
 
       # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
       bind = $mainMod, Return, exec, footclient
-      bind = $mainMod, W, exec, brave --password-store=basic
+      bind = $mainMod, W, exec, firefox
       bind = $mainMod, Q, killactive,
       bind = $mainMod, M, exit,
       bind = $mainMod, E, exec, thunar
