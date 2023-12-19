@@ -193,6 +193,19 @@
               vim.lsp.buf.format()
             end, { desc = 'Format current buffer with LSP' })
           end
+          lspconfig.gopls.setup {
+            capabilities = capabilities,
+            on_attach = on_attach,
+            settings = {
+              gopls = {
+                analyses = {
+                  unusedparams = true,
+                },
+                staticcheck = true,
+                gofumpt = true,
+              },
+            },
+          }
           lspconfig.rnix.setup {
             capabilities = capabilities,
             on_attach = on_attach,
@@ -393,6 +406,9 @@
               nix = {
                 require('formatter.filetypes.nix').nixfmt,
               },
+              go = {
+                  require('formatter.filetypes.go').gofumpt,
+              },
               ['*'] = {
                 require('formatter.filetypes.any').remove_trailing_whitespace,
               },
@@ -412,6 +428,8 @@
       codeium
       tree-sitter
       gcc
+      gopls
+      gofumpt
       nodePackages.typescript-language-server
       nodePackages.eslint
       nodePackages.eslint_d
