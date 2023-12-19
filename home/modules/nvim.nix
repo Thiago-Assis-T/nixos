@@ -408,6 +408,7 @@
               },
               go = {
                   require('formatter.filetypes.go').gofumpt,
+                  require('formatter.filetypes.go').goimports_reviser,
               },
               ['*'] = {
                 require('formatter.filetypes.any').remove_trailing_whitespace,
@@ -430,6 +431,7 @@
       gcc
       gopls
       gofumpt
+      goimports-reviser
       nodePackages.typescript-language-server
       nodePackages.eslint
       nodePackages.eslint_d
