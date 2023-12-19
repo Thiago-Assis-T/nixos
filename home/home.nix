@@ -15,7 +15,7 @@
     username = "thiago";
     homeDirectory = "/home/thiago";
     stateVersion = "22.11";
-    packages = with pkgs; [ go gopls codeium wl-clipboard htop bat ];
+    packages = with pkgs; [ gopls codeium wl-clipboard htop bat ];
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
       QT_QPA_PLATFORM = "wayland";
