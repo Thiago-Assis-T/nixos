@@ -407,8 +407,9 @@
                 require('formatter.filetypes.nix').nixfmt,
               },
               go = {
-                  require('formatter.filetypes.go').gofumpt,
+                  require('formatter.filetypes.go').golines,
                   require('formatter.filetypes.go').goimports_reviser,
+                  require('formatter.filetypes.go').gofumpt,
               },
               ['*'] = {
                 require('formatter.filetypes.any').remove_trailing_whitespace,
@@ -432,6 +433,7 @@
       gopls
       gofumpt
       goimports-reviser
+      golines
       nodePackages.typescript-language-server
       nodePackages.eslint
       nodePackages.eslint_d
