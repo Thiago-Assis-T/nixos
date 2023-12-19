@@ -51,7 +51,7 @@
           # See https://wiki.hyprland.org/Configuring/Variables/ for more
 
           gaps_in = 5
-          gaps_out = 20
+          gaps_out = 10
           border_size = 2
           col.active_border =  rgba(7dcfffff) rgba(7aa2f7ff) 45deg
           col.inactive_border = rgba(595959aa)
@@ -105,7 +105,7 @@
 
       gestures {
           # See https://wiki.hyprland.org/Configuring/Variables/ for more
-          workspace_swipe = false
+          workspace_swipe = true
       }
 
       misc {
