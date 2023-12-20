@@ -2,6 +2,6 @@
   users.users.thiago = {
     isNormalUser = true;
     description = "Thiago";
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "video" ];
   };
 }

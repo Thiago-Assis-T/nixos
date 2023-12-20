@@ -16,6 +16,7 @@
   services.xserver.libinput.enable = true;
 
   networking.hostName = "ThiagoLaptop";
+  environment.systemPackages = with pkgs; [ brightnessctl ];
 
   nix.settings.system-features = [ "gccarch-skylake" ];
   nixpkgs = {

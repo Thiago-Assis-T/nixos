@@ -141,6 +141,11 @@
       bind = $mainMod, P, pseudo, # dwindle
       bind = $mainMod, J, togglesplit, # dwindle
 
+      bind = , XF86MonBrightnessUp, exec, brightnessctl -q set 5%+
+      bind = , XF86MonBrightnessDown, exec, brightnessctl -q set 5%-
+      bind = , XF86KbdLightOnOff, exec, brightnessctl -q -d dell::kbd_backlight set 1+
+      # bind = SHIFT, XF86KbdLightOnOff, exec, brightnessctl -q -d dell::kbd_backlight set 1-
+
       # Move focus with mainMod + arrow keys
       bind = $mainMod, left, movefocus, l
       bind = $mainMod, right, movefocus, r
