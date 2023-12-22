@@ -5,7 +5,7 @@
     ./modules/shell.nix
     ./modules/direnv.nix
     ./modules/git.nix
-    ./modules/nvim.nix
+    ./modules/nvim
     ./modules/browser.nix
     ./modules/foot.nix
     ./modules/theming.nix
