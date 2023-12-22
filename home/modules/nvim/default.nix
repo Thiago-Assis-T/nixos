@@ -189,9 +189,6 @@
               print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
             end, '[W]orkspace [L]ist Folders')
 
-            vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
-              vim.lsp.buf.format()
-            end, { desc = 'Format current buffer with LSP' })
           end
           lspconfig.gopls.setup {
             capabilities = capabilities,
@@ -347,20 +344,7 @@
       {
         plugin = nvim-lint;
         type = "lua";
-        config = ''
-          require('lint').linters_by_ft = {
-            nix = { 'statix' },
-            javascript = { 'eslint' },
-            javascriptreact = { 'eslint' },
-            typescript = { 'eslint' },
-            typescriptreact = { 'eslint' },
-          }
-          vim.api.nvim_create_autocmd({ 'BufWritePost' }, {
-            callback = function()
-              require('lint').try_lint()
-            end,
-          })
-        '';
+        config = builtins.readFile ./lua/linter.lua "";
       }
       {
         plugin = formatter-nvim;
@@ -383,11 +367,11 @@
       gofumpt
       gotools
       golines
+      golangci-lint
       nodePackages.typescript-language-server
       nodePackages.eslint
       nodePackages.eslint_d
     ];
   };
   home.sessionVariables = { EDITOR = "nvim"; };
-
 }
