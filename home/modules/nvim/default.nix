@@ -196,15 +196,6 @@
           lspconfig.gopls.setup {
             capabilities = capabilities,
             on_attach = on_attach,
-            settings = {
-              gopls = {
-                analyses = {
-                  unusedparams = true,
-                },
-                staticcheck = true,
-                gofumpt = true,
-              },
-            },
           }
           lspconfig.rnix.setup {
             capabilities = capabilities,
@@ -374,49 +365,7 @@
       {
         plugin = formatter-nvim;
         type = "lua";
-        config = ''
-          local cmd = vim.cmd
-          local api = vim.api
-          api.nvim_create_autocmd('BufWritePre', {
-              callback = function()
-              vim.schedule(function()
-                  cmd('FormatWrite')
-                  end)
-              end,
-              })
-          require('formatter').setup({
-            logging = false,
-            log_level = vim.log.levels.WARN,
-            filetype = {
-              javascript = {
-                require('formatter.filetypes.javascript').eslint_d,
-              },
-              javascriptreact = {
-                require('formatter.filetypes.javascriptreact').eslint_d,
-              },
-              typescript = {
-                require('formatter.filetypes.typescript').eslint_d,
-              },
-              typescriptreact = {
-                require('formatter.filetypes.typescriptreact').eslint_d,
-              },
-              json = {
-                require('formatter.filetypes.json').eslint_d,
-              },
-              nix = {
-                require('formatter.filetypes.nix').nixfmt,
-              },
-              go = {
-                  require('formatter.filetypes.go').golines,
-                  require('formatter.filetypes.go').goimports_reviser,
-                  require('formatter.filetypes.go').gofumpt,
-              },
-              ['*'] = {
-                require('formatter.filetypes.any').remove_trailing_whitespace,
-              },
-            },
-          })
-        '';
+        config = builtins.readFile ./lua/formatter.lua;
       }
     ];
 
@@ -432,7 +381,7 @@
       gcc
       gopls
       gofumpt
-      goimports-reviser
+      gotools
       golines
       nodePackages.typescript-language-server
       nodePackages.eslint
