@@ -5,7 +5,7 @@
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
-    extraLuaConfig = builtins.readFile ./lua/extraLuaConfig.lua;
+    extraLuaConfig = builtins.readFile ./lua/ExtraLuaConfig.lua;
     plugins = with pkgs.vimPlugins; [
       nvim-treesitter.withAllGrammars
       plenary-nvim
