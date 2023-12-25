@@ -5,7 +5,7 @@
     server.enable = true;
     settings = {
       main = {
-        font = "JetBrains Mono:size=14, Symbols Nerd Font:size=13";
+        font = "JetBrains Mono:size=14, Symbols Nerd Font:size=14";
       };
 
       colors = {
