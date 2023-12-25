@@ -344,7 +344,7 @@
       {
         plugin = nvim-lint;
         type = "lua";
-        config = builtins.readFile ./lua/linter.lua "";
+        config = builtins.readFile ./lua/linter.lua ;
       }
       {
         plugin = formatter-nvim;
