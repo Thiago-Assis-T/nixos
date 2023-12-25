@@ -1,6 +1,6 @@
 require('lint').linters_by_ft = {
   nix = { 'statix' },
-  go = { 'golangci-lint' }
+  go = { 'golangci-lint' },
   javascript = { 'eslint' },
   javascriptreact = { 'eslint' },
   typescript = { 'eslint' },
