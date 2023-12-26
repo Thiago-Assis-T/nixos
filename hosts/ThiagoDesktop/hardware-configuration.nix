@@ -1,29 +1,26 @@
-{ config, lib, pkgs, modulesPath,  ... }: {
+{ config, lib, pkgs, modulesPath, ... }: {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.initrd.availableKernelModules =
+    [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
+  boot.initrd.kernelModules = [ ];
+  boot.kernelModules = [ "kvm-amd" ];
+  boot.extraModulePackages = [ ];
 
-  boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
-    initrd.availableKernelModules =
-      [ "amdgpu" "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
-    kernelModules = [ "amdgpu" "kvm-amd" ];
-
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/c04d87be-31b8-4b2c-b352-7c11a6ee07b2";
+    fsType = "ext4";
   };
-  fileSystems = {
-    "/" = {
-      device = "/dev/disk/by-uuid/63e8dbc8-6720-40b8-8ee4-7ce1e5f3380d";
-      fsType = "ext4";
-    };
 
-    "/boot" = {
-      device = "/dev/disk/by-uuid/1415-ECF7";
-      fsType = "vfat";
-    };
-
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/AEE8-B475";
+    fsType = "vfat";
   };
 
   swapDevices =
-    [{ device = "/dev/disk/by-uuid/edf9e667-375b-48b3-82ab-d1dcdf4b99e9"; }];
+    [{ device = "/dev/disk/by-uuid/d0548893-bef2-4ba6-8763-933a15910c52"; }];
   networking.useDHCP = lib.mkDefault true;
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.amd.updateMicrocode = true;
+  hardware.cpu.amd.updateMicrocode =
+    lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
