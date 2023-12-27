@@ -60,13 +60,13 @@
     "hosts": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-7bj7XShrXnc2s4nFHHmMfImYxEQC4PrAW3fde/w9dNw=",
+        "narHash": "sha256-C0EMa3h9HnMG8+Bq7yr1lM+4mUjiw8tZTz4FC+NSLoI=",
         "type": "file",
-        "url": "http://sbc.io/hosts/alternates/fakenews-gambling-porn-social/hosts"
+        "url": "http://sbc.io/hosts/alternates/fakenews-gambling-porn/hosts"
       },
       "original": {
         "type": "file",
-        "url": "http://sbc.io/hosts/alternates/fakenews-gambling-porn-social/hosts"
+        "url": "http://sbc.io/hosts/alternates/fakenews-gambling-porn/hosts"
       }
     },
     "nix-gaming": {

@@ -15,7 +15,7 @@
 
     hosts = {
       url =
-        "file+http://sbc.io/hosts/alternates/fakenews-gambling-porn-social/hosts";
+        "file+http://sbc.io/hosts/alternates/fakenews-gambling-porn/hosts";
       flake = false;
     };
 
