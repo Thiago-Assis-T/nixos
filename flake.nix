@@ -13,6 +13,12 @@
 
     nix-gaming.url = "github:fufexan/nix-gaming";
 
+    hosts = {
+      url =
+        "file+http://sbc.io/hosts/alternates/fakenews-gambling-porn-social/hosts";
+      flake = false;
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -20,7 +26,7 @@
   };
 
   outputs = inputs@{ self, home-manager, nixpkgs, unstable, nixos-hardware
-    , utils, ... }:
+    , utils, hosts, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -38,7 +44,7 @@
       nixosConfigurations = {
         ThiagoLaptop = nixpkgs.lib.nixosSystem {
           specialArgs = {
-            inherit nixos-hardware inputs pkgs unstable-pkgs system;
+            inherit hosts nixos-hardware inputs pkgs unstable-pkgs system;
           };
           modules = [
             ./hosts/ThiagoLaptop/configuration.nix
@@ -66,7 +72,7 @@
           ];
         };
         ThiagoDesktop = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit system pkgs unstable-pkgs inputs; };
+          specialArgs = { inherit hosts system pkgs unstable-pkgs inputs; };
 
           modules = [
             ./hosts/ThiagoDesktop/configuration.nix

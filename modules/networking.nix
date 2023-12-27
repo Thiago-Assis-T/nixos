@@ -1,12 +1,10 @@
-{ config, ... }: {
+{ config,  hosts, ... }: {
   networking = {
     networkmanager = {
       enable = true;
-      wifi = {
-        # backend = "iwd";
-        macAddress = "random";
-      };
+      wifi = { macAddress = "random"; };
     };
+    hostFiles = [ hosts ];
     firewall = { enable = true; };
   };
 
