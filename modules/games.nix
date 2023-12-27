@@ -5,7 +5,7 @@
       enable = true;
       remotePlay.openFirewall = false;
       dedicatedServer.openFirewall = false;
-      gamescopeSession.enable = false;
+      gamescopeSession.enable = true;
       extraCompatPackages =
         [ inputs.nix-gaming.packages.${pkgs.system}.proton-ge ];
     };
