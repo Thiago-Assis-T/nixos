@@ -10,6 +10,7 @@
     ./modules/foot.nix
     ./modules/theming.nix
     ./modules/hyprland.nix
+    ./modules/waybar
   ];
   fonts.fontconfig.enable = true;
   home = {
