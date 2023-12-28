@@ -3,7 +3,7 @@
 	"position": "bottom",
 
 	"modules-left": [
-		"sway/workspaces",
+		"wlr/workspaces",
 		"custom/right-arrow-dark"
 	],
 	"modules-center": [

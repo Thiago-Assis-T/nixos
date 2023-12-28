@@ -6,7 +6,7 @@
       enable = true;
       target = "hyprland-session.target";
     };
-    settings = builtins.readFile ./settings;
+    settings = [ builtins.readFile ./settings.json ];
     style = builtins.readFile ./style.css;
 
   };
