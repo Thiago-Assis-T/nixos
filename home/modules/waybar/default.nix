@@ -2,10 +2,12 @@
 
   programs.waybar = {
     enable = true;
-systemd = {
-  enable = true;
-  target = "hyprland-session.target";
-};
+    systemd = {
+      enable = true;
+      target = "hyprland-session.target";
+    };
+    settings = builtins.readFile ./settings;
+    style = builtins.readFile ./style.css;
 
   };
 }
