@@ -6,6 +6,7 @@
     extraConfig = {
       color = { ui = "auto"; };
       pull = { rebase = true; };
+      core = { editor = "nvim"; };
     };
     includes = [{
       contents = {
