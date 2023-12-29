@@ -18,6 +18,8 @@
     homeDirectory = "/home/thiago";
     stateVersion = "22.11";
     packages = with pkgs; [
+      grim
+      slurp
       discord-canary
       neofetch
       codeium

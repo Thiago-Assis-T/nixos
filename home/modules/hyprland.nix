@@ -114,21 +114,21 @@
       $mainMod = SUPER
 
       # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
-      bind = $mainMod, Return, exec, footclient
-      bind = $mainMod, W, exec, firefox
+      bind = $mainMod, Return, exec, ${pkgs.foot}/bin/footclient
+      bind = $mainMod, W, exec, ${pkgs.firefox}/bin/firefox
       bind = $mainMod, Q, killactive,
       bind = $mainMod, M, exit,
       bind = $mainMod, E, exec, thunar
       bind = $mainMod, V, togglefloating,
-      bind = $mainMod, R, exec, wofi -I -m -b -a --show drun
-      bind = $mainMod, Escape, exec, wlogout
-      bind = $mainMod, P, pseudo, # dwindle
+      bind = $mainMod, R, exec, ${pkgs.wofi}/bin/wofi -I -m -b -a --show drun
+      bind = $mainMod, Escape, exec, ${pkgs.wlogout}/bin/wlogout
+      bind = $mainMod, P, exec,  ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" - | ${pkgs.wl-clipboard}/bin/wl-copy
       bind = $mainMod, J, togglesplit, # dwindle
 
-      bind = , XF86MonBrightnessUp, exec, brightnessctl -q set 5%+
-      bind = , XF86MonBrightnessDown, exec, brightnessctl -q set 5%-
-      bind = , XF86KbdLightOnOff, exec, brightnessctl -q -d dell::kbd_backlight set 1+
-      # bind = SHIFT, XF86KbdLightOnOff, exec, brightnessctl -q -d dell::kbd_backlight set 1-
+      bind = , XF86MonBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl -q set 5%+
+      bind = , XF86MonBrightnessDown, exec, ${pkgs.brightnessctl}/bin/brightnessctl -q set 5%-
+      bind = , XF86KbdLightOnOff, exec, ${pkgs.brightnessctl}/bin/brightnessctl -q -d dell::kbd_backlight set 1+
+      # bind = SHIFT, XF86KbdLightOnOff, exec, ${pkgs.brightnessctl}/bin/brightnessctl -q -d dell::kbd_backlight set 1-
 
       # Move focus with mainMod + arrow keys
       bind = $mainMod, left, movefocus, l

@@ -1,4 +1,6 @@
 { config, pkgs, unstable-pkgs, inputs, ... }: {
+
+  environment.systemPackages = with pkgs; [ heroic ];
   programs = {
     gamemode.enable = true;
     steam = {
