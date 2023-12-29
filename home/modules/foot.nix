@@ -4,12 +4,10 @@
     enable = true;
     server.enable = true;
     settings = {
-      main = {
-        font = "JetBrains Mono:size=14, Symbols Nerd Font:size=14";
-      };
+      main = { font = "JetBrains Mono:size=14, Symbols Nerd Font:size=14"; };
 
       colors = {
-        alpha = "0.5";
+        alpha = "0.8";
         background = "1a1b26";
         foreground = "c0caf5";
         regular0 = "15161E";

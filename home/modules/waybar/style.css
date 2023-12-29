@@ -1,11 +1,16 @@
 * {
-	font-size: 15px;
+	font-size: 12px;
 	font-family: monospace;
 }
 
 window#waybar {
-	background: #292b2e;
+	background: transparent;
 	color: #fdf6e3;
+}
+
+#custom-right-arrow-dark,
+#custom-left-arrow-dark {
+  font-size: 20px;
 }
 
 #custom-right-arrow-dark,
@@ -14,8 +19,8 @@ window#waybar {
 }
 #custom-right-arrow-light,
 #custom-left-arrow-light {
-	color: #292b2e;
-	background: #1a1a1a;
+	color: transparent;
+	background: transparent;
 }
 
 #workspaces,
@@ -32,7 +37,7 @@ window#waybar {
 }
 
 #workspaces button {
-	padding: 0 2px;
+	  padding: 0 2px;
 	color: #fdf6e3;
 }
 #workspaces button.focused {

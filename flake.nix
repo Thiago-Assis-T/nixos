@@ -14,8 +14,7 @@
     nix-gaming.url = "github:fufexan/nix-gaming";
 
     hosts = {
-      url =
-        "file+http://sbc.io/hosts/alternates/fakenews-gambling-porn/hosts";
+      url = "file+http://sbc.io/hosts/alternates/fakenews-gambling-porn/hosts";
       flake = false;
     };
 

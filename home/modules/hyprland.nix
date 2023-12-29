@@ -1,16 +1,15 @@
 { config, pkgs, lib, ... }: {
   programs.wofi.enable = true;
   programs.wlogout.enable = true;
-  home = {
-    packages = with pkgs; [ wl-clipboard ];
-  };
+  home = { packages = with pkgs; [ swww wl-clipboard ]; };
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
     enableNvidiaPatches = true;
     extraConfig = ''
-
-      exec=foot --server
+      exec=${pkgs.swww}/bin/swww init;
+      exec=${pkgs.swww}/bin/swww img /home/thigo/nixos/home/modules/wallpapers/wallpaper1.gif;
+      exec=${pkgs.foot}/bin/foot --server
       exec=${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1
       monitor=,preferred,auto,auto
 
@@ -26,7 +25,7 @@
           follow_mouse = 1
 
           touchpad {
-              natural_scroll = true 
+              natural_scroll = true
           }
 
           sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
