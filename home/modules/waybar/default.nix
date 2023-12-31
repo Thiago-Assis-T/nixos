@@ -24,7 +24,6 @@
           "custom/left-arrow-dark"
           "clock#2"
           "custom/right-arrow-dark"
-          "custom/right-arrow-light"
           "custom/left-arrow-dark"
           "clock#3"
           "custom/right-arrow-dark"
