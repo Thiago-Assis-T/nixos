@@ -18,10 +18,11 @@
     homeDirectory = "/home/thiago";
     stateVersion = "22.11";
     packages = with pkgs; [
-      unstable-pkgs.theharvester
+      unstable-pkgs.logseq
+      theharvester
       grim
       slurp
-      discord-canary
+      discord
       neofetch
       codeium
       wl-clipboard

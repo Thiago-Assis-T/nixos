@@ -2,7 +2,6 @@
   imports = [
     ./hardware-configuration.nix
     ./specialisation.nix
-    ../../modules/games.nix
     ../../modules/networking.nix
     ../../modules/nix.nix
     ../../modules/services.nix
