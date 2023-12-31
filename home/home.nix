@@ -18,7 +18,6 @@
     homeDirectory = "/home/thiago";
     stateVersion = "22.11";
     packages = with pkgs; [
-      unstable-pkgs.logseq
       theharvester
       grim
       slurp
