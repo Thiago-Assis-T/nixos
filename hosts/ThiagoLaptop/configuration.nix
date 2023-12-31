@@ -18,7 +18,7 @@
   networking.hostName = "ThiagoLaptop";
   environment.systemPackages = with pkgs; [ brightnessctl ];
 
-  nix.settings.system-features = [ "gccarch-skylake" ];
+  nix.settings.system-features = [ "big-parallel" "gccarch-skylake" ];
   nixpkgs = {
     localSystem = {
       system = "x86_64-linux";

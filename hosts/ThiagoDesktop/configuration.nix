@@ -15,7 +15,7 @@
   ];
   environment.systemPackages = with pkgs; [ ];
 
-  nix.settings.system-features = [ "gccarch-znver3" ];
+  nix.settings.system-features = [ "big-parallel" "gccarch-znver3" ];
   nixpkgs = {
     localSystem = {
       system = "x86_64-linux";

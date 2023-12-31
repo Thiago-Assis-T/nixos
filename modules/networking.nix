@@ -1,4 +1,8 @@
-{ config,  hosts, ... }: {
+{ config, hosts, ... }: {
+  programs.nm-applet = {
+    enable = true;
+    indicator = true;
+  };
   networking = {
     networkmanager = {
       enable = true;
