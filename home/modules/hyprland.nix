@@ -7,8 +7,11 @@
     xwayland.enable = true;
     enableNvidiaPatches = true;
     extraConfig = ''
+      exec=sleep 1;
       exec=${pkgs.swww}/bin/swww init;
-      exec=${pkgs.swww}/bin/swww img /home/thigo/nixos/home/modules/wallpapers/wallpaper1.gif;
+      exec=sleep 1;
+      exec=${pkgs.swww}/bin/swww img /home/thiago/nixos/home/modules/wallpapers/wallpaper1.gif
+
       exec=${pkgs.foot}/bin/foot --server
       exec=${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1
       monitor=,preferred,auto,auto

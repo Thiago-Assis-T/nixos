@@ -1,7 +1,7 @@
 { config, pkgs, nixos-hardware, ... }: {
   imports = [
     ./hardware-configuration.nix
-    ./specialisation.nix
+    ./powerManagement.nix
     ../../modules/networking.nix
     ../../modules/nix.nix
     ../../modules/services.nix
@@ -11,7 +11,6 @@
     ../../modules/ssh.nix
     ../../modules/printing.nix
   ];
-
   services.xserver.libinput.enable = true;
 
   networking.hostName = "ThiagoLaptop";
@@ -30,14 +29,10 @@
     autoUpgrade = {
       enable = true;
       operation = "boot";
-      allowReboot = true;
+      allowReboot = false;
       flake = "/home/thiago/nixos/#ThiagoLaptop";
-      flags = [ "--update-input" "nixpkgs" "-L" "--no-write-to-lock-file" ];
+      flags = [ "--update-input" "nixpkgs" "-L" ];
       dates = "daily";
-      rebootWindow = {
-        lower = "01:00";
-        upper = "03:00";
-      };
     };
   };
 

@@ -54,6 +54,7 @@
             nixos-hardware.nixosModules.common-pc-laptop
             nixos-hardware.nixosModules.common-pc-laptop-acpi_call
             nixos-hardware.nixosModules.common-gpu-intel
+            nixos-hardware.nixosModules.common-gpu-nvidia-disable
             home-manager.nixosModules.home-manager
             inputs.nix-gaming.nixosModules.pipewireLowLatency
             inputs.nix-gaming.nixosModules.steamCompat
