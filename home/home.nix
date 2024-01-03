@@ -13,15 +13,14 @@
     ./modules/waybar
   ];
   fonts.fontconfig.enable = true;
+
   home = {
     username = "thiago";
     homeDirectory = "/home/thiago";
     stateVersion = "22.11";
     packages = with pkgs; [
-      # unstable-pkgs.logseq
-      theharvester
-      grim
-      slurp
+      tree
+      unstable-pkgs.theharvester
       discord
       neofetch
       codeium
@@ -33,7 +32,7 @@
       NIXOS_OZONE_WL = "1";
       QT_QPA_PLATFORM = "wayland";
       GDK_BACKEND = "wayland";
-      SDL_VIDEODRIVER = "wayland";
+      SDL_VIDEODRIVER = "wayland"; # Gave me problems to play mindustry
       CLUTTER_BACKEND = "wayland";
       XDG_SESSION_TYPE = "wayland";
       XDG_CURRENT_DESKTOP = "Hyprland";

@@ -1,11 +1,10 @@
 { config, pkgs, lib, ... }: {
   programs.wofi.enable = true;
   programs.wlogout.enable = true;
-  home = { packages = with pkgs; [ swww wl-clipboard ]; };
+  home = { packages = with pkgs; [ grim slurp swww wl-clipboard ]; };
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
-    enableNvidiaPatches = true;
     extraConfig = ''
       exec=sleep 1;${pkgs.swww}/bin/swww init; sleep 1;${pkgs.swww}/bin/swww img /home/thiago/nixos/home/modules/wallpapers/wallpaper1.gif
 
