@@ -53,5 +53,5 @@
   systemd.services.dnscrypt-proxy2.serviceConfig = {
     StateDirectory = "dnscrypt-proxy";
   };
-
+  services.snowflake-proxy.enable = true;
 }

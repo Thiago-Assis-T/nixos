@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  imports = [ ./snow-flake.nix ];
+  imports = [ ./containers.nix ];
   virtualisation = {
     oci-containers.backend = "podman";
     podman = {
