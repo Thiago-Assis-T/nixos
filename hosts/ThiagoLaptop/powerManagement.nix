@@ -9,7 +9,7 @@
     settings = {
       TLP_ENABLE = 1;
       TLP_DEFAULT_MODE = "BAT";
-      TLP_PERSISTENT_DEFAULT = 1;
+      TLP_PERSISTENT_DEFAULT = 0;
       MAX_LOST_WORK_SECS_ON_AC = 15;
       MAX_LOST_WORK_SECS_ON_BAT = 60;
       CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
