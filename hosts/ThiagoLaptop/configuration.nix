@@ -10,7 +10,6 @@
     ../../modules/boot.nix
     ../../modules/ssh.nix
     ../../modules/printing.nix
-    ../../modules/universalContainers
   ];
   services.xserver.libinput.enable = true;
 
