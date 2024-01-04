@@ -17,7 +17,7 @@
       CPU_SCALING_MAX_FREQ_ON_BAT = 2500000;
       CPU_HWP_ON_BAT = "power";
       CPU_MIN_PERF_ON_BAT = 0;
-      CPU_MAX_PERF_ON_BAT = 45;
+      CPU_MAX_PERF_ON_BAT = 40;
       CPU_BOOST_ON_BAT = 0;
       SCHED_POWERSAVE_ON_BAT = 1;
       NMI_WATCHDOG = 0;
