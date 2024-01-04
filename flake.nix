@@ -30,12 +30,18 @@
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
-        config = { allowUnfree = true; };
+        config = {
+          allowUnfree = true;
+          permittedInsecurePackages = [ "electron-25.9.0" ];
+        };
       };
 
       unstable-pkgs = import unstable {
         inherit system;
-        config = { allowUnfree = true; };
+        config = {
+          allowUnfree = true;
+          permittedInsecurePackages = [ "electron-25.9.0" ];
+        };
       };
 
     in {

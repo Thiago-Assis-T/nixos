@@ -20,7 +20,7 @@
     stateVersion = "22.11";
     packages = with pkgs; [
       tree
-      unstable-pkgs.theharvester
+      unstable-pkgs.logseq
       discord
       neofetch
       codeium
@@ -46,5 +46,8 @@
   };
 
   services.gnome-keyring.enable = true;
-  xdg.enable = true;
+  xdg = {
+    enable = true;
+    mimeApps = { enable = true; };
+  };
 }

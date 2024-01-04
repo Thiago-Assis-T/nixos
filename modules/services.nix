@@ -17,8 +17,19 @@
       };
     };
   };
-  programs.dconf.enable = true;
   security.rtkit.enable = true;
+  programs = {
+    dconf.enable = true;
+    thunar = {
+      enable = true;
+      plugins = with pkgs.xfce; [
+        thunar-media-tags-plugin
+        thunar-volman
+        thunar-archive-plugin
+      ];
+    };
+
+  };
   services = {
     xserver = {
       layout = "br";

@@ -117,7 +117,7 @@
       bind = $mainMod, W, exec, ${pkgs.firefox}/bin/firefox
       bind = $mainMod, Q, killactive,
       bind = $mainMod, M, exit,
-      bind = $mainMod, E, exec, thunar
+      bind = $mainMod, E, exec, ${pkgs.xfce.thunar}/bin/thunar
       bind = $mainMod, V, togglefloating,
       bind = $mainMod, R, exec, ${pkgs.wofi}/bin/wofi -I -m -b -a --show drun
       bind = $mainMod, Escape, exec, ${pkgs.wlogout}/bin/wlogout
