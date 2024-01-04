@@ -12,5 +12,14 @@
       enable = true;
       enableBashIntegration = true;
     };
+    nix-index = {
+      enable = true;
+      enableBashIntegration = true;
+    };
+    fzf = {
+      enable = true;
+      enableBashIntegration = true;
+      tmux.enableShellIntegration = true;
+    };
   };
 }

@@ -2,7 +2,7 @@
   programs.tmux = {
     enable = true;
     clock24 = true;
-    shell = "\${pkgs.bash}/bin/bash";
+    shell = "${pkgs.bash}/bin/bash";
   };
 
 }

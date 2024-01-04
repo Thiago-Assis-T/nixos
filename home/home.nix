@@ -20,7 +20,6 @@
     homeDirectory = "/home/thiago";
     stateVersion = "22.11";
     packages = with pkgs; [
-      nix-index
       tree
       unstable-pkgs.logseq
       discord
