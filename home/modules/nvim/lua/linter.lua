@@ -1,10 +1,8 @@
 require('lint').linters_by_ft = {
   nix = { 'statix' },
   go = { 'golangci-lint' },
-  javascript = { 'eslint' },
-  javascriptreact = { 'eslint' },
-  typescript = { 'eslint' },
-  typescriptreact = { 'eslint' },
+  c = { 'clangtidy' },
+  cpp = { 'clangtidy' },
 }
 vim.api.nvim_create_autocmd({ 'BufWritePost' }, {
   callback = function()

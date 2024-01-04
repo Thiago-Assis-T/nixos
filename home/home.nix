@@ -11,6 +11,7 @@
     ./modules/theming.nix
     ./modules/hyprland.nix
     ./modules/waybar
+    ./modules/tmux.nix
   ];
   fonts.fontconfig.enable = true;
 
@@ -19,6 +20,7 @@
     homeDirectory = "/home/thiago";
     stateVersion = "22.11";
     packages = with pkgs; [
+      nix-index
       tree
       unstable-pkgs.logseq
       discord

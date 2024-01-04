@@ -11,21 +11,6 @@ require('formatter').setup({
   logging = false,
   log_level = vim.log.levels.WARN,
   filetype = {
-    javascript = {
-      require('formatter.filetypes.javascript').eslint_d,
-    },
-    javascriptreact = {
-      require('formatter.filetypes.javascriptreact').eslint_d,
-    },
-    typescript = {
-      require('formatter.filetypes.typescript').eslint_d,
-    },
-    typescriptreact = {
-      require('formatter.filetypes.typescriptreact').eslint_d,
-    },
-    json = {
-      require('formatter.filetypes.json').eslint_d,
-    },
     nix = {
       require('formatter.filetypes.nix').nixfmt,
     },
@@ -34,6 +19,12 @@ require('formatter').setup({
       require('formatter.filetypes.go').golines,
       require('formatter.filetypes.go').gofumpt,
       require('formatter.filetypes.go').goimports
+    },
+    cpp = {
+      require('formatter.filetypes.cpp').clangformat
+    },
+    c = {
+      require('formatter.filetypes.c').clangformat
     },
     ['*'] = {
       require('formatter.filetypes.any').remove_trailing_whitespace,

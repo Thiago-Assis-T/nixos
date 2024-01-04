@@ -42,14 +42,14 @@
         config = builtins.readFile ./lua/lualine.lua;
       }
       {
-        plugin = nvim-lspconfig;
-        type = "lua";
-        config = builtins.readFile ./lua/lspconfig.lua;
-      }
-      {
         plugin = telescope-nvim;
         type = "lua";
         config = builtins.readFile ./lua/telescope.lua;
+      }
+      {
+        plugin = nvim-lspconfig;
+        type = "lua";
+        config = builtins.readFile ./lua/lspconfig.lua;
       }
       {
         plugin = gitsigns-nvim;
@@ -80,9 +80,10 @@
 
     extraPackages = with pkgs; [
       rnix-lsp
+      libclang
+      clang-tools
       ripgrep
       fd
-      nodejs
       statix
       nixfmt
       codeium
@@ -93,9 +94,6 @@
       gotools
       golines
       golangci-lint
-      nodePackages.typescript-language-server
-      nodePackages.eslint
-      nodePackages.eslint_d
     ];
   };
   home.sessionVariables = { EDITOR = "nvim"; };
