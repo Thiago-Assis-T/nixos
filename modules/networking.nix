@@ -53,5 +53,11 @@
   systemd.services.dnscrypt-proxy2.serviceConfig = {
     StateDirectory = "dnscrypt-proxy";
   };
-  services.snowflake-proxy.enable = true;
+  services.snowflake-proxy = {
+    enable = true;
+    capacity = 100;
+    stun = "stun:stun.stunprotocol.org:3478";
+    relay = "wss://snowflake.bamsoftware.com/";
+    broker = "https://snowflake-broker.torproject.net/";
+  };
 }
