@@ -7,7 +7,7 @@
       shellAliases = {
         htop = "sudo htop";
         cat = "bat";
-        fzf = "fzf-tmux -p --reverse";
+        fzf= "fzf-tmux -p --reverse";
         nvim = "fd --type f --hidden --exclude .git | fzf | xargs nvim";
         vim = "nvim";
         vi = "nvim";
