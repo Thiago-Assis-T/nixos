@@ -22,21 +22,6 @@
   };
 
   services = {
-    tor = {
-      enable = false;
-      openFirewall = true;
-      relay = {
-        enable = true;
-        role = "relay";
-      };
-      settings = {
-        # ContactInfo = "toradmin@example.org";
-        # Nickname = "toradmin";
-        ORPort = 9001;
-        ControlPort = 9051;
-        # BandWidthRate = "1 MBytes";
-      };
-    };
     dnscrypt-proxy2 = {
       enable = true;
       settings = {
@@ -69,12 +54,5 @@
 
   systemd.services.dnscrypt-proxy2.serviceConfig = {
     StateDirectory = "dnscrypt-proxy";
-  };
-  services.snowflake-proxy = {
-    enable = false;
-    capacity = 100;
-    stun = "stun:stun.stunprotocol.org:3478";
-    relay = "wss://snowflake.bamsoftware.com/";
-    broker = "https://snowflake-broker.torproject.net/";
   };
 }
