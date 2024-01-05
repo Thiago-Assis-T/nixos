@@ -22,9 +22,8 @@
   };
 
   services = {
-
     tor = {
-      enable = true;
+      enable = false;
       openFirewall = true;
       relay = {
         enable = true;
@@ -72,7 +71,7 @@
     StateDirectory = "dnscrypt-proxy";
   };
   services.snowflake-proxy = {
-    enable = true;
+    enable = false;
     capacity = 100;
     stun = "stun:stun.stunprotocol.org:3478";
     relay = "wss://snowflake.bamsoftware.com/";

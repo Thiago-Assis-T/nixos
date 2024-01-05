@@ -1,4 +1,5 @@
 { pkgs, lib, ... }: {
+  home.packages = with pkgs; [ fd ];
   programs = {
     bash = {
       enable = true;
@@ -6,9 +7,11 @@
       shellAliases = {
         htop = "sudo htop";
         cat = "bat";
-        nvim = "nvim $(fzf)";
-        vim = "nvim $(fzf)";
-        vi = "nvim $(fzf)";
+        fzf = "fzf-tmux -p --reverse";
+        nvim = "fd --type f --hidden --exclude .git | fzf | xargs nvim";
+        vim = "nvim";
+        vi = "nvim";
+
       };
       bashrcExtra = ''
         if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
@@ -29,4 +32,5 @@
       tmux.enableShellIntegration = true;
     };
   };
+
 }
