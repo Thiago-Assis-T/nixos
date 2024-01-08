@@ -29,6 +29,8 @@
       set-option -g status-left-length 30
       set-option -sa terminal-overrides ",xterm*:Tc"
       bind-key r source-file ~/.config/tmux/tmux.conf\; display-message "config reloaded."
+      set-option -g default-terminal "tmux-256color"
+      set-option -sa terminal-features ',tmux-256color:RGB'
     '';
   };
 

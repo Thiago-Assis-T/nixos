@@ -1,6 +1,7 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, unstable-pkgs, ... }: {
   programs.neovim = {
     enable = true;
+    #package = unstable-pkgs.neovim;
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
@@ -16,6 +17,13 @@
       cmp_luasnip
       cmp-fuzzy-path
       cmp-fuzzy-buffer
+      {
+        plugin = fidget-nvim;
+        type = "lua";
+        config = ''
+          require('fidget').setup{}
+        '';
+      }
       {
         plugin = codeium-vim;
         type = "lua";
